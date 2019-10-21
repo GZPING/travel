@@ -1,0 +1,50 @@
+spring:
+  application:
+    name: wenwo-cloud-business-pk-meal
+  profiles:
+    active: dev
+  cloud:
+    config:
+      fail-fast: true
+      discovery:
+        service-id: config-server
+        enabled: true
+      profile: ${spring.profiles.active}
+      label: ${spring.profiles.active}
+    bus:
+      trace:
+        enabled: true
+
+info:
+  application:
+    name: ${spring.application.name}
+    summary: '套餐投放'
+  build:
+    groupId: @project.groupId@
+    artifactId: @project.artifactId@
+    version: @project.version@
+    timestamp: @maven.build.timestamp@
+management:
+  server:
+    servlet:
+      context-path: ${server.servlet.path:/}
+  endpoints:
+    web:
+      exposure:
+        include: ['health', 'info', 'metrics', 'bus-refresh']
+  endpoint:
+    health:
+      show-details: ALWAYS
+---
+spring:
+  profiles: dev
+eureka:
+  instance:
+    prefer-ip-address: true
+    lease-renewal-interval-in-seconds: 5
+    lease-expiration-duration-in-seconds: 20
+  client:
+    serviceUrl:
+      defaultZone: http://192.168.1.240:7001/eureka
+    registry-fetch-interval-seconds: 10
+logstash.server: 192.168.1.129:9999
