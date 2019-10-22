@@ -9,7 +9,7 @@ server:
 spring:
   #mysql
   datasource:
-    name: test
+    name: travel
     url: jdbc:mysql://127.0.0.1:3306/travel?useUnicode=true&characterEncoding=UTF8
     username: root
     password: 123456
