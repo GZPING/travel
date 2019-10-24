@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
@@ -9,13 +9,13 @@
     <meta name="apple-mobile-web-app-title" content="Travel">
     <link rel="canonical" href="https://www.runoob.com/">
 
-    <title>
-        Travel</title>
-    <link rel="stylesheet" type="text/css" media="all" href="./files/style.css">
+    <title>Travel</title>
+    <link rel="stylesheet" type="text/css" media="all" th:href="@{/css/style.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/prettify.css}">
     <meta name="keywords" content="travel 旅游">
     <meta name="description" content="旅游广告主界面">
-    <script src="./菜鸟教程_files/hm.js"></script>
-    <script type="text/javascript" src="./菜鸟教程_files/jquery.min.js"></script>
+    <script th:src="@{/static/lib/jquery.min.js}"></script>
+    <script th:src="@{/static/lib/hm.js}"></script>
     <script type="text/javascript">
         $('.load_more_cont a').live('click', function (e) {
             e.preventDefault();
@@ -55,7 +55,7 @@
 
         })
     </script>
-    <link rel="stylesheet" type="text/css" href="./files/prettify.css">
+
 </head>
 <body class="custom-background">
 <div id="wrapper">
