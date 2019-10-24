@@ -3,6 +3,8 @@ package com.gd.travel.mapper;
 import com.gd.travel.entity.Dictionary;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
+import java.util.List;
+
 /**
  * <p>
  *  Mapper 接口
@@ -13,4 +15,5 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  */
 public interface DictionaryMapper extends BaseMapper<Dictionary> {
 
+    List<Dictionary> listByPid(Long pid);
 }
