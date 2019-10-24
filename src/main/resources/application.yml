@@ -5,7 +5,7 @@ server:
     accesslog:
       enabled: true
   servlet:
-    context-path: /travel/     #名字前面一定要加/ 不然启动会报错
+    context-path: /     #名字前面一定要加/ 不然启动会报错
 spring:
   #mysql
   datasource:
@@ -33,6 +33,10 @@ spring:
     name: travel
     profiles:
       active: dev
+  mvc:
+    static-path-pattern: /**
+    view:
+      prefix: classpath:/static/ # 配置静态页面访问前缀
 
 logging:
   config: classpath:logback-spring.xml
