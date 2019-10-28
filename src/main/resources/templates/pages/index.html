@@ -65,20 +65,17 @@
         <div class="menu-main" style="display: none;">
             <ul th:each="dictionary : ${dictionaries}">
                 <li class="cat-item cat-item-16">
-                    <a th:href="@{/dictionary/index/dictionary.id}" th:title="">
-                    教程</a>
+                    <a th:href="@{/dictionary/index/dictionary.id}" th:title="">教程</a>
                 </li>
             </ul>
         </div>
     </div>
     <div class="browse">现在位置： <a title="返回首页" href="">首页</a></div>
 
-
     <div class="h-cat">
         <ul th:each="dictionary : ${dictionaries}">
             <li class="cat-item cat-item-16">
-                <a th:href="@{/dictionary/index/dictionary.id}" th:title="${dictionary.name}">${dictionary.name}
-                    教程</a>
+                <a th:href="@{/dictionary/index/dictionary.id}" th:title="${dictionary.name}">${dictionary.name}教程</a>
             </li>
         </ul>
         <div class="clear"></div>

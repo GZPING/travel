@@ -1,9 +1,9 @@
 package com.gd.travel.service.impl;
 
+import cn.hutool.core.codec.Base64;
 import com.alibaba.fastjson.JSONObject;
 import com.gd.travel.service.IWeiboLogin;
 import com.gd.travel.utils.HttpsClientUtil;
-import it.sauronsoftware.base64.Base64;
 import org.apache.http.NameValuePair;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
