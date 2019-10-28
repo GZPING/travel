@@ -63,9 +63,9 @@
         <h1><a href="#"><span class="blog-name">Travel</span><span class="blog-title"></span></a></h1>
         <span class="menu">≡</span>
         <div class="menu-main" style="display: none;">
-            <ul>
-                <li class="cat-item cat-item-16"><a href="https://m.runoob.com/ado/"
-                                                    title="ADO，即 ActiveX 数据对象（ActiveX Data Objects），是微软公司提出的应用程序接口，用于访问关系或非关系数据库中的数据。">ADO
+            <ul th:each="dictionary : ${dictionaries}">
+                <li class="cat-item cat-item-16">
+                    <a th:href="@{/dictionary/index/dictionary.id}" th:title="">
                     教程</a>
                 </li>
             </ul>
@@ -75,12 +75,11 @@
 
 
     <div class="h-cat">
-        <ul>
-            <li class="cat-item cat-item-16"><a href="https://m.runoob.com/ado/"
-                                                title="ADO，即 ActiveX 数据对象（ActiveX Data Objects），是微软公司提出的应用程序接口，用于访问关系或非关系数据库中的数据。">ADO
-                教程</a>
+        <ul th:each="dictionary : ${dictionaries}">
+            <li class="cat-item cat-item-16">
+                <a th:href="@{/dictionary/index/dictionary.id}" th:title="${dictionary.name}">${dictionary.name}
+                    教程</a>
             </li>
-
         </ul>
         <div class="clear"></div>
     </div>
