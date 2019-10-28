@@ -9,6 +9,8 @@ class TravelApplicationTests {
 
     @Test
     void contextLoads() {
+
+        Integer.parseInt(null);
     }
 
 }
