@@ -3,8 +3,7 @@ package com.gd.travel.entity;
 import java.time.LocalDateTime;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
+import lombok.*;
 import lombok.experimental.Accessors;
 
 /**
@@ -16,12 +15,17 @@ import lombok.experimental.Accessors;
  * @since 2019-10-21
  */
 @Data
-@EqualsAndHashCode(callSuper = true)
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 @Accessors(chain = true)
+@EqualsAndHashCode(callSuper = true)
 @ApiModel(value="Dictionary对象", description="")
 public class Dictionary extends BaseEntity {
 
     private static final long serialVersionUID=1L;
+
+    private Long id;
 
     @ApiModelProperty(value = "字典名称")
     private String name;

@@ -44,3 +44,4 @@ logging:
     root: INFO
     org:
       mybatis: INFO
+

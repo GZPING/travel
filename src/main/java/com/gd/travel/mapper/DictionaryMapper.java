@@ -2,6 +2,8 @@ package com.gd.travel.mapper;
 
 import com.gd.travel.entity.Dictionary;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.annotations.Select;
 
 import java.util.List;
 
@@ -15,5 +17,6 @@ import java.util.List;
  */
 public interface DictionaryMapper extends BaseMapper<Dictionary> {
 
-    List<Dictionary> listByPid(Long pid);
+    @Select("select * from dictionary t where t.pid=#{pid}")
+    List<Dictionary> listByPid(@Param("pid") Long pid);
 }

@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
@@ -27,5 +28,12 @@ public class IndexController {
         List<Dictionary> dictionaries = dictionaryService.listbyPid(0L);
         model.addAttribute("dictionaries",dictionaries);
         return "pages/index";
+    }
+
+    @GetMapping("list_2")
+    public String list2(Model model,@RequestParam("id") Long id){
+        List<Dictionary> dictionaries = dictionaryService.listbyPid(id);
+        model.addAttribute("dictionaries",dictionaries);
+        return "pages/list_2";
     }
 }

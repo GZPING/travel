@@ -7,7 +7,6 @@
 
     <link rel="apple-touch-icon" href="https://static.runoob.com/images/icon/mobile-icon.png">
     <meta name="apple-mobile-web-app-title" content="Travel">
-    <link rel="canonical" href="https://www.runoob.com/">
 
     <title>Travel</title>
     <link rel="stylesheet" type="text/css" media="all" th:href="@{/css/style.css}">
@@ -65,17 +64,18 @@
         <div class="menu-main" style="display: none;">
             <ul th:each="dictionary : ${dictionaries}">
                 <li class="cat-item cat-item-16">
-                    <a th:href="@{/dictionary/index/dictionary.id}" th:title="">教程</a>
+                    <a th:href="@{/page/list_2/(id=${dictionary.getId()})}">
+                        <span th:text="${dictionary.getName()}"></span> </a>
                 </li>
             </ul>
         </div>
     </div>
     <div class="browse">现在位置： <a title="返回首页" href="">首页</a></div>
-
     <div class="h-cat">
         <ul th:each="dictionary : ${dictionaries}">
             <li class="cat-item cat-item-16">
-                <a th:href="@{/dictionary/index/dictionary.id}" th:title="${dictionary.name}">${dictionary.name}教程</a>
+                <a th:href="@{/page/list_2/(id=${dictionary.getId()})}">
+                   <span th:text="${dictionary.getName()}"></span> </a>
             </li>
         </ul>
         <div class="clear"></div>

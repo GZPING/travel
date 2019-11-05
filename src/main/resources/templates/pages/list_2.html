@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!-- saved from url=(0025)https://m.runoob.com/ado/ -->
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
@@ -10,14 +10,13 @@
     <meta name="apple-mobile-web-app-title" content="菜鸟教程">
     <link rel="canonical" href="https://www.runoob.com/ado/">
 
-    <title>
-        ADO 教程 | 菜鸟教程</title>
-    <link rel="stylesheet" type="text/css" media="all" href="./ADO 教程 _ 菜鸟教程_files/style.css">
-    <link rel="dns-prefetch" href="https://s.w.org/">
-    <meta name="keywords" content="ADO 教程">
-    <meta name="description" content="菜鸟教程&#39;ADO 教程&#39;..">
-    <script src="./ADO 教程 _ 菜鸟教程_files/hm.js.下载"></script>
-    <script type="text/javascript" src="./ADO 教程 _ 菜鸟教程_files/jquery.min.js.下载"></script>
+    <title>Traval</title>
+    <link rel="stylesheet" type="text/css" media="all" th:href="@{/css/style.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/prettify.css}">
+    <meta name="keywords" content="travel 旅游">
+    <meta name="description" content="旅游广告主界面">
+    <script th:src="@{/static/lib/jquery.min.js}"></script>
+    <script th:src="@{/static/lib/hm.js}"></script>
     <script type="text/javascript">
         $('.load_more_cont a').live('click', function (e) {
             e.preventDefault();
@@ -77,30 +76,25 @@
         <a href="https://m.runoob.com/ado/">ADO 教程</a> &gt; 文章
     </div>
 
-    <div id="main">
+    <div id="main" th:each="dictionary : ${dictionaries}">
         <div id="content">
             <div class="post_box">
 
 			<div class="sico">&gt;</div>
-			<a href="https://m.runoob.com/ado/ado-tutorial.html" title="详细阅读 &gt; ADO 教程" rel="bookmark"><h2
-					class="entry-title">ADO 教程</h2></a>
+
+             <a th:href="@{/page/list_2/(id=${dictionary.getId()})}">
+                    <span th:text="${dictionary.getName()}"></span> </a>
 			</div>
-            <!-- post_box -->
-            <div class="clear"></div>
+
         </div>
-        <!-- content -->
-        <div class="load_more_cont">
-            <div class="load_more_text"></div>
-        </div>
-        <!-- load_more_cont -->
     </div>
     <div class="h-cat">
-        <ul>
-
-            <li class="cat-item cat-item-145"><a href="https://m.runoob.com/design-pattern/"
-                                                 title="设计模式（Design pattern）是一套被反复使用的、多数人知晓的、经过分类编目的、代码设计经验的总结。使用设计模式是为了重用代码、让代码更容易被他人理解、保证代码可靠性。 ">设计模式</a>
+        <!--<ul  th:each="dictionary : ${dictionaries}">
+            <li class="cat-item cat-item-145">
+                <a th:href="@{/page/list_2/(id=${dictionary.getId()})}">
+                    <span th:text="${dictionary.getName()}"></span> </a>
             </li>
-        </ul>
+        </ul>-->
         <div class="clear"></div>
     </div>
     <div class="footer_content">
