@@ -3,11 +3,11 @@ body {
     margin: 0;
     font-size: 100%;
     background: #fff;
-	font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 html {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 body a {
     text-decoration: none;
@@ -16,7 +16,7 @@ body a {
     -moz-transition: 0.5s all;
     -o-transition: 0.5s all;
     -ms-transition: 0.5s all;
-	font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 body img {
@@ -46,15 +46,15 @@ h4,
 h5,
 h6 {
     margin: 0;
-	color: #323648;
+    color: #323648;
 }
 li {
     list-style-type: none;
 }
 p {
     margin: 0;
-    font-size: 15px;
-    line-height: 30px;
+    font-size: 8px;
+    line-height: 15px;
     letter-spacing: 1px;
     color: #707579;
 }
@@ -75,18 +75,18 @@ header {
 
 .toggle,
 [id^=drop] {
-	display: none;
+    display: none;
 }
 
 /* Giving a background-color to the nav container. */
-nav { 
-	margin:0;
-	padding: 0;
+nav {
+    margin:0;
+    padding: 0;
 }
 
 
 #logo a {
-	float: left;
+    float: left;
     font-size: .8em;
     display: initial;
     margin: 0;
@@ -105,27 +105,27 @@ nav {
  * we need to add a clear after the container. */
 
 nav:after {
-	content:"";
-	display:table;
-	clear:both;
+    content:"";
+    display:table;
+    clear:both;
 }
 .tlinks{text-indent:-9999px;height:0;line-height:0;font-size:0;overflow:hidden;}
 /* Removing padding, margin and "list-style" from the "ul",
  * and adding "position:reltive" */
 nav ul {
-	float: right;
-	padding:0;
-	margin:0;
-	list-style: none;
-	position: relative;
-	}
-	
+    float: right;
+    padding:0;
+    margin:0;
+    list-style: none;
+    position: relative;
+}
+
 /* Positioning the navigation items inline */
 nav ul li {
-	margin: 0px;
-	display:inline-block;
-	float: left;
-	}
+    margin: 0px;
+    display:inline-block;
+    float: left;
+}
 
 /* Styling the links */
 nav a {
@@ -134,7 +134,7 @@ nav a {
     letter-spacing: 1px;
     padding-left: 0;
     padding-right: 0;
-	padding: 10px 0;
+    padding: 10px 0;
     font-size: 15px;
 }
 
@@ -142,38 +142,38 @@ nav a {
 nav ul li ul li:hover { background: #f8f9fa; }
 
 /* Background color change on Hover */
-nav a:hover { 
-	color: #ddd;
+nav a:hover {
+    color: #ddd;
 }
 nav .inner-dropdown a:hover {
     color: #333;
 }
-.menu li.active  a{ 
-	color: #fff;
+.menu li.active  a{
+    color: #fff;
 }
 
 /* Hide Dropdowns by Default
  * and giving it a position of absolute */
 nav ul ul {
-	display: none;
-	position: absolute; 
-	/* has to be the same number as the "line-height" of "nav a" */
-	top: 30px; 
+    display: none;
+    position: absolute;
+    /* has to be the same number as the "line-height" of "nav a" */
+    top: 30px;
     background: #fff;
     padding: 10px;
 }
-	
+
 /* Display Dropdowns on Hover */
 nav ul li:hover > ul {
-	display:inherit;
+    display:inherit;
 }
-	
+
 /* Fisrt Tier Dropdown */
 nav ul ul li {
-	width:170px;
-	float:none;
-	display:list-item;
-	position: relative;
+    width:170px;
+    float:none;
+    display:list-item;
+    position: relative;
 }
 nav ul ul li a {
     color: #333 !important;
@@ -181,15 +181,15 @@ nav ul ul li a {
     display: block;
 }
 
-/* Second, Third and more Tiers	
+/* Second, Third and more Tiers
  * We move the 2nd and 3rd etc tier dropdowns to the left
  * by the amount of the width of the first tier.
 */
 nav ul ul ul li {
-	position: relative;
-	top:-60px;
-	/* has to be the same number as the "width" of "nav ul ul li" */ 
-	left:170px; 
+    position: relative;
+    top:-60px;
+    /* has to be the same number as the "width" of "nav ul ul li" */
+    left:170px;
 }
 .login-icon a {
     background: #03A9F4;
@@ -215,153 +215,153 @@ li > a:only-child:after { content: ''; }
 
 @media all and (max-width : 736px) {
 
-	#logo {
-		display: block;
-		padding: 0;
-		width: 100%;
-		text-align: center;
-		float: none;
-	}
+    #logo {
+        display: block;
+        padding: 0;
+        width: 100%;
+        text-align: center;
+        float: none;
+    }
 
-	.login-icon a {
-		padding: 11px 15px;
-	}
-	nav {
-		margin: 0;
-	}
-	nav a {
-		color: #333;
-	}
+    .login-icon a {
+        padding: 11px 15px;
+    }
+    nav {
+        margin: 0;
+    }
+    nav a {
+        color: #333;
+    }
 
-	/* Hide the navigation menu by default */
-	/* Also hide the  */
-	.toggle + a,
-	.menu {
-		display: none;
-	}
+    /* Hide the navigation menu by default */
+    /* Also hide the  */
+    .toggle + a,
+    .menu {
+        display: none;
+    }
 
-	/* Stylinf the toggle lable */
-	.toggle {
-		display: block;
-		padding: 7px 15px;
-		font-size: 17px;
-		text-decoration: none;
-		border: none;
-		float: right;
-		background-color: #00BCD4;
-		color: #fff;
-		border-radius: 0px;
-	}
-	.menu .toggle {
-		float: none;
-		text-align: center;
-		margin: auto;
-		width: auto;
-		padding: 5px;
-		font-weight: normal;
-		font-size: 15px;
-		letter-spacing: 1px;
-		background: none;
-		color: #333;
-	}
+    /* Stylinf the toggle lable */
+    .toggle {
+        display: block;
+        padding: 7px 15px;
+        font-size: 17px;
+        text-decoration: none;
+        border: none;
+        float: right;
+        background-color: #00BCD4;
+        color: #fff;
+        border-radius: 0px;
+    }
+    .menu .toggle {
+        float: none;
+        text-align: center;
+        margin: auto;
+        width: auto;
+        padding: 5px;
+        font-weight: normal;
+        font-size: 15px;
+        letter-spacing: 1px;
+        background: none;
+        color: #333;
+    }
 
-	.toggle:hover {
-		color:#333;
-		background-color: #fff;
-	}
+    .toggle:hover {
+        color:#333;
+        background-color: #fff;
+    }
 
-	/* Display Dropdown when clicked on Parent Lable */
-	[id^=drop]:checked + ul {
-		display: block;
-		background: #fff;
-		padding: 15px 0;
-		width:100%;
-		text-align: center;
-	}
+    /* Display Dropdown when clicked on Parent Lable */
+    [id^=drop]:checked + ul {
+        display: block;
+        background: #fff;
+        padding: 15px 0;
+        width:100%;
+        text-align: center;
+    }
 
-	/* Change menu item's width to 100% */
-	nav ul li {
-		display: block;
-		width: 100%;
-		padding: 7px 0;
-		}
-	nav a{
-		padding: 5px 0;
-	}
-	nav a:hover {
-		color: #333;
-		border-bottom: 2px solid #333;
-	}
-	nav ul ul .toggle,
-	nav ul ul a {
-		padding: 0 40px;
-	}
+    /* Change menu item's width to 100% */
+    nav ul li {
+        display: block;
+        width: 100%;
+        padding: 7px 0;
+    }
+    nav a{
+        padding: 5px 0;
+    }
+    nav a:hover {
+        color: #333;
+        border-bottom: 2px solid #333;
+    }
+    nav ul ul .toggle,
+    nav ul ul a {
+        padding: 0 40px;
+    }
 
-	nav ul ul ul a {
-		padding: 0 80px;
-	}
+    nav ul ul ul a {
+        padding: 0 80px;
+    }
 
-	nav a:hover,
- 	nav ul ul ul a {
-		background-color: transparent;
-	}
-  
-	nav ul li ul li .toggle,
-	nav ul ul a,
-	nav ul ul ul a{
-		padding:14px 20px;	
-		color:#FFF;
-		font-size:17px; 
-	}
-  
-  
-	nav ul li ul li .toggle,
-	nav ul ul a {
-		background-color: #fff; 
-	}
-	nav ul ul li a {
-		font-size: 15px;
-		display: inline-block;
-		border-bottom: 2px solid transparent;
-	}
-	ul.inner-ul{
-		padding: 0!important;
-	}
-	/* Hide Dropdowns by Default */
-	nav ul ul {
-		float: none;
-		position:static;
-		color: #ffffff;
-		/* has to be the same number as the "line-height" of "nav a" */
-	}
-		
-	/* Hide menus on hover */
-	nav ul ul li:hover > ul,
-	nav ul li:hover > ul {
-		display: none;
-	}
-		
-	/* Fisrt Tier Dropdown */
-	nav ul ul li {
-		display: block;
-		width: 100%;
-		padding: 0;
-	}
+    nav a:hover,
+    nav ul ul ul a {
+        background-color: transparent;
+    }
 
-	nav ul ul ul li {
-		position: static;
-		/* has to be the same number as the "width" of "nav ul ul li" */ 
+    nav ul li ul li .toggle,
+    nav ul ul a,
+    nav ul ul ul a{
+        padding:14px 20px;
+        color:#FFF;
+        font-size:17px;
+    }
 
-	}
+
+    nav ul li ul li .toggle,
+    nav ul ul a {
+        background-color: #fff;
+    }
+    nav ul ul li a {
+        font-size: 15px;
+        display: inline-block;
+        border-bottom: 2px solid transparent;
+    }
+    ul.inner-ul{
+        padding: 0!important;
+    }
+    /* Hide Dropdowns by Default */
+    nav ul ul {
+        float: none;
+        position:static;
+        color: #ffffff;
+        /* has to be the same number as the "line-height" of "nav a" */
+    }
+
+    /* Hide menus on hover */
+    nav ul ul li:hover > ul,
+    nav ul li:hover > ul {
+        display: none;
+    }
+
+    /* Fisrt Tier Dropdown */
+    nav ul ul li {
+        display: block;
+        width: 100%;
+        padding: 0;
+    }
+
+    nav ul ul ul li {
+        position: static;
+        /* has to be the same number as the "width" of "nav ul ul li" */
+
+    }
 
 }
 
 @media all and (max-width : 330px) {
 
-	nav ul li {
-		display:block;
-		width: 94%;
-	}
+    nav ul li {
+        display:block;
+        width: 94%;
+    }
 
 }
 .user span.fa {
@@ -381,7 +381,7 @@ li > a:only-child:after { content: ''; }
     float: right;
 }
 .top-grid p a{
-	color: #eee;
+    color: #eee;
 }
 .top_header span.block {
     display: block;
@@ -389,7 +389,7 @@ li > a:only-child:after { content: ''; }
     color: #bbb;
 }
 .top_header{
-	text-align:right;
+    text-align:right;
 }
 /*-- //header --*/
 
@@ -398,7 +398,7 @@ li > a:only-child:after { content: ''; }
 .banner {
     background: url(../images/banner.jpg) no-repeat center;
     background-size: cover;
-	position: relative;
+    position: relative;
     height: 20vw;
     margin-bottom: 7em;
 }
@@ -410,7 +410,7 @@ li > a:only-child:after { content: ''; }
     top: 0;
     left: 0;
     opacity: 0.45;
-	background: #000;
+    background: #000;
 }
 .slider-info {
     position: relative;
@@ -486,11 +486,11 @@ li > a:only-child:after { content: ''; }
     background: #fff;
 }
 .choose-grid h3 {
-    font-size: 18px;
+    font-size: 10px;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 1px;
-    line-height: 32px;
+  /* line-height: 10px;*/
 }
 
 .choose-icon span.fa {
@@ -499,24 +499,24 @@ li > a:only-child:after { content: ''; }
 }
 .choose-icon {
     background: #fff;
-    padding: 3em 1em;
+    padding: 1em .5em;
     width: 20%;
-	margin-right:5px;
+    margin-right:5px;
     float: left;
-	box-shadow: 7px 7px 10px 0 rgba(76, 110, 245, .1);
-	transition: 0.5s all;
-	-webkit-transition: 0.5s all;
-	-moz-transition: 0.5s all;
-	-ms-transition: 0.5s all;
-	-o-transition: 0.5s all;
+    box-shadow: 7px 7px 10px 0 rgba(76, 110, 245, .1);
+    transition: 0.5s all;
+    -webkit-transition: 0.5s all;
+    -moz-transition: 0.5s all;
+    -ms-transition: 0.5s all;
+    -o-transition: 0.5s all;
 }
 .choose-icon:hover  {
     transform: scale(1.1);
-	transition: 0.5s all;
-	-webkit-transition: 0.5s all;
-	-moz-transition: 0.5s all;
-	-ms-transition: 0.5s all;
-	-o-transition: 0.5s all;
+    transition: 0.5s all;
+    -webkit-transition: 0.5s all;
+    -moz-transition: 0.5s all;
+    -ms-transition: 0.5s all;
+    -o-transition: 0.5s all;
 }
 
 /*
@@ -569,7 +569,7 @@ h2.heading,h3.heading {
 }
 
 .our-services-icon span.fa {
-	font-size: 45px;
+    font-size: 45px;
     color: #00bcd4;
 }
 .our-services-text {
@@ -584,7 +584,7 @@ h2.heading,h3.heading {
     font-weight: 600;
     letter-spacing: 1px;
     margin-bottom: 18px;
-	margin-top: 15px;
+    margin-top: 15px;
     position: relative;
     text-transform: uppercase;
 }
@@ -619,7 +619,7 @@ h4.heading {
 }
 .stats-inner-grid p{
     float: left;
-	margin-left: 15px;
+    margin-left: 15px;
     line-height: 22px;
     margin-top: 5px;
 }
@@ -636,7 +636,7 @@ h4.heading {
 .shipping-right{
     background: #fff;
     padding: 3em 4em;
-	box-shadow: 7px 7px 10px 0 rgba(76, 110, 245, .1);
+    box-shadow: 7px 7px 10px 0 rgba(76, 110, 245, .1);
 }
 /*-- //shipping --*/
 
@@ -707,7 +707,7 @@ p.card-text {
 /*--footer--*/
 
 .footer_w3layouts_section_1its{
-	background: #151515;
+    background: #151515;
 }
 
 .footer_w3layouts_section_1its h3, .footer_w3layouts_section_1its h2 {
@@ -739,37 +739,37 @@ p.card-text {
     text-transform: capitalize;
 }
 .copyright p a{
-	color:#808080;
-	text-decoration: underline;
+    color:#808080;
+    text-decoration: underline;
 }
 .copyright p a:hover {
-	color:#fff;
+    color:#fff;
 }
 
 .footer-grid:nth-child(2) {
-	border-left: 1px solid #1b1b1b;
-	border-right: 1px solid #1b1b1b;
+    border-left: 1px solid #1b1b1b;
+    border-right: 1px solid #1b1b1b;
 }
 
 .footer ul li.hd {
-	color: #34bf49;
+    color: #34bf49;
 }
 
 .newsletter .email {
-	background-color: #F4F4F4;
-	border: none;
+    background-color: #F4F4F4;
+    border: none;
 }
 
 .flickr-grid {
-	float: left;
-	width: 32%;
-	margin: 0 0.1em .2em;
+    float: left;
+    width: 32%;
+    margin: 0 0.1em .2em;
 }
 
 .flickr-grid a img {
-	width: 100%;
-	padding: 0.3em;
-	border: 1px solid #333333;
+    width: 100%;
+    padding: 0.3em;
+    border: 1px solid #333333;
 }
 
 .footer-text input[type="email"] {
@@ -784,8 +784,8 @@ p.card-text {
 }
 
 .newsletter {
-	position: relative;
-	margin-top: 2em;
+    position: relative;
+    margin-top: 2em;
 }
 
 button.btn1 {
@@ -846,7 +846,7 @@ ul.links li a{
     background: url(../images/banner.jpg) no-repeat center;
     background-size: cover;
     min-height: 20vw;
-	position: relative;
+    position: relative;
 }
 .inner-banner:before {
     content: '';
@@ -893,9 +893,9 @@ ul.links li a{
     position: absolute;
     bottom: -50%;
     left: 15%;
-	-webkit-box-shadow: -5px 6px 25px -12px rgba(0,0,0,0.75);
-	-moz-box-shadow: -5px 6px 25px -12px rgba(0,0,0,0.75);
-	box-shadow: -5px 6px 25px -12px rgba(0,0,0,0.75);
+    -webkit-box-shadow: -5px 6px 25px -12px rgba(0,0,0,0.75);
+    -moz-box-shadow: -5px 6px 25px -12px rgba(0,0,0,0.75);
+    box-shadow: -5px 6px 25px -12px rgba(0,0,0,0.75);
 }
 .form {
     flex-basis: 60%;
@@ -916,7 +916,7 @@ ul.links li a{
     padding: 15px 20px;
     margin: 10px 0;
     width: 49%;
-	color: #666;
+    color: #666;
     box-sizing: border-box;
     outline: none;
     border: 1px solid #999;
@@ -938,29 +938,29 @@ ul.links li a{
     border: none;
     width: 25%;
     margin: 10px 0 0 auto;
-	border-radius: 0;
+    border-radius: 0;
     transition: all 0.5s ease-in;
 }
 textarea {
     font-size: 14px;
     resize: none;
-	text-transform: capitalize;
+    text-transform: capitalize;
     padding: 15px 20px;
     letter-spacing: 1px;
     width: 100%;
-	margin: 10px 0;
+    margin: 10px 0;
     box-sizing: border-box;
-    outline: none;	
+    outline: none;
     color: #666;
-	border: 1px solid #999;
-	background: transparent;
+    border: 1px solid #999;
+    background: transparent;
 }
 
 .w3ls-contact address p span.fa {
     width: 25px;
     margin-left: 0px;
     display: inline-block;
-	color: #00bcd4;
+    color: #00bcd4;
 }
 .w3ls-contact address p, .w3ls-contact address p a{
     color: #bbb;
@@ -1346,497 +1346,497 @@ ul.team-social li a  span.fa{
 /*-- Responsive design --*/
 
 @media(max-width:1440px) {
-	.choose {
-		width: 78%;
-	}
-	.main_grid_contact {
-		width: 76%;
-		left: 12%;
-	}
+    .choose {
+        width: 78%;
+    }
+    .main_grid_contact {
+        width: 76%;
+        left: 12%;
+    }
 }
 @media(max-width:1336px) {
-	.choose {
-		width: 85%;
-	}
-	.main_grid_contact {
-		width: 80%;
-		left: 10%;
-	}
+    .choose {
+        width: 85%;
+    }
+    .main_grid_contact {
+        width: 80%;
+        left: 10%;
+    }
 }
 @media(max-width:1280px) {
-	.choose {
-		width: 90%;
-	}
-	.main_grid_contact {
-		width: 86%;
-		left: 7%;
-	}
+    .choose {
+        width: 90%;
+    }
+    .main_grid_contact {
+        width: 86%;
+        left: 7%;
+    }
 }
 @media(max-width:1080px) {
-	.top-grid span.fa {
-		font-size: 40px;
-	}
-	.top-grid {
-		padding-right: 0;
-	}
-	.top-grid.pl-0 {
-		padding-right: 0px;
-	}
-	.choose-icon {
-		padding: 1.5em 0.7em;
-	}
-	.choose-grid h3 {
-		font-size: 16px;
-		letter-spacing: 1px;
-	}
-	.choose {
-		bottom: -27%;
-	}
-	.agileinfo-logo h2 {
-		font-size: 3em;
-	}
-	.about h3 {
-		font-size: 22px;
-	}
-	h4.heading {
-		font-size: 27px;
-	}
-	.stats-right {
-		padding: 2em 0;
-	}
-	.blog-grid-info .card h5.card-title {
-		font-size: 18px;
-	}
-	.stats-inner-grid h4 {
-		font-size: 45px;
-	}
-	.our-team-img img {
-		width: 80px;
-	}
-	.our-team-img {
-		width: 100px;
-	}
-	.main_grid_contact {
-		width: 90%;
-		left: 5%;
-	}
-	.w3ls-contact {
-		padding: 3em 2em;
-	}
+    .top-grid span.fa {
+        font-size: 40px;
+    }
+    .top-grid {
+        padding-right: 0;
+    }
+    .top-grid.pl-0 {
+        padding-right: 0px;
+    }
+    .choose-icon {
+        padding: 1.5em 0.7em;
+    }
+    .choose-grid h3 {
+        font-size: 16px;
+        letter-spacing: 1px;
+    }
+    .choose {
+        bottom: -27%;
+    }
+    .agileinfo-logo h2 {
+        font-size: 3em;
+    }
+    .about h3 {
+        font-size: 22px;
+    }
+    h4.heading {
+        font-size: 27px;
+    }
+    .stats-right {
+        padding: 2em 0;
+    }
+    .blog-grid-info .card h5.card-title {
+        font-size: 18px;
+    }
+    .stats-inner-grid h4 {
+        font-size: 45px;
+    }
+    .our-team-img img {
+        width: 80px;
+    }
+    .our-team-img {
+        width: 100px;
+    }
+    .main_grid_contact {
+        width: 90%;
+        left: 5%;
+    }
+    .w3ls-contact {
+        padding: 3em 2em;
+    }
 }
 @media(max-width:1024px) {
-	.choose {
-		width: 95%;
-	}
-	.banner {
-		height: 50vw;
-	}
-	.error-section h2 {
-		font-size: 90px;
-	}
-	.error-section h2 span {
-		font-size: 45px;
-	}
+    .choose {
+        width: 95%;
+    }
+    .banner {
+        height: 50vw;
+    }
+    .error-section h2 {
+        font-size: 90px;
+    }
+    .error-section h2 span {
+        font-size: 45px;
+    }
 }
 @media(max-width:991px) {
-	.slider-info {
-		width: 75%;
-	}
-	.banner-text {
-		padding-top: 18vw;
-	}
-	.agileinfo-logo h2 {
-		font-size: 2.7em;
-	}
-	p {
-		font-size: 14px;
-	}
-	.stats-right {
-		padding: 2em 1em 0;
-	}
-	#logo a {
-		font-size: .7em;
-	}
-	.manager-img img.img1 {
-		width: 20%;
-	}
-	.footer_w3layouts_section_1its h3, .footer_w3layouts_section_1its h2 {
-		font-size: 20px;
-		letter-spacing: 1px;
-	}
-	h4.heading {
-		font-size: 25px;
-	}
-	.choose-icon {
-		padding: 2em 1em;
-		margin-bottom: 5px;
-		width: 32.7%;
-	}
-	.choose {
-		bottom: -60%;
-	}
-	.banner {
-		margin-bottom: 19em;
-	}
-	.main-clients {
-		width: 90%;
-		margin: 0 auto;
-	}
-	.csslider>.navigation {
-		bottom: -10%;
-	}
-	h2.heading, h3.heading {
-		font-size: 40px;
-	}
+    .slider-info {
+        width: 75%;
+    }
+    .banner-text {
+        padding-top: 18vw;
+    }
+    .agileinfo-logo h2 {
+        font-size: 2.7em;
+    }
+    p {
+        font-size: 14px;
+    }
+    .stats-right {
+        padding: 2em 1em 0;
+    }
+    #logo a {
+        font-size: .7em;
+    }
+    .manager-img img.img1 {
+        width: 20%;
+    }
+    .footer_w3layouts_section_1its h3, .footer_w3layouts_section_1its h2 {
+        font-size: 20px;
+        letter-spacing: 1px;
+    }
+    h4.heading {
+        font-size: 25px;
+    }
+    .choose-icon {
+        padding: 2em 1em;
+        margin-bottom: 5px;
+        width: 32.7%;
+    }
+    .choose {
+        bottom: -60%;
+    }
+    .banner {
+        margin-bottom: 19em;
+    }
+    .main-clients {
+        width: 90%;
+        margin: 0 auto;
+    }
+    .csslider>.navigation {
+        bottom: -10%;
+    }
+    h2.heading, h3.heading {
+        font-size: 40px;
+    }
 }
 @media(max-width:900px) {
-	.banner {
-		height: 54vw;
-	}
-	.banner-text {
-		padding-top: 20vw;
-	}
-	.w3ls-contact h3,.form h3 {
-		font-size: 22px;
-	}
+    .banner {
+        height: 54vw;
+    }
+    .banner-text {
+        padding-top: 20vw;
+    }
+    .w3ls-contact h3,.form h3 {
+        font-size: 22px;
+    }
 }
 @media(max-width:800px) {
-	.choose-icon {
-		width: 32.6%;
-	}
-	.banner {
-		height: 60vw;
-	}
-	.banner-text {
-		padding-top: 25vw;
-	}
-	.agileinfo-logo h2 {
-		font-size: 2.4em;
-	}
-	.choose {
-		bottom: -65%;
-	}
-	.inner-banner {
-		min-height: 25vw;
-	}
-	.feedback-top h4 {
-		font-size: 20px;
-	}
-	.error-section h2 {
-		font-size: 80px;
-	}
-	.error-section h2 span {
-		font-size: 40px;
-	}
-	.main_grid_contact {
-		flex-direction: column;
-		position: static;
-		width: 100%;
-	}
-	.map iframe {
-		height: 300px;
-	}
-	.map {
-		margin-bottom: 0em;
-	}
-	.w3ls-contact address {
-		margin-bottom: 0rem;
-		margin-top: 1rem;
-	}
+    .choose-icon {
+        width: 32.6%;
+    }
+    .banner {
+        height: 60vw;
+    }
+    .banner-text {
+        padding-top: 25vw;
+    }
+    .agileinfo-logo h2 {
+        font-size: 2.4em;
+    }
+    .choose {
+        bottom: -65%;
+    }
+    .inner-banner {
+        min-height: 25vw;
+    }
+    .feedback-top h4 {
+        font-size: 20px;
+    }
+    .error-section h2 {
+        font-size: 80px;
+    }
+    .error-section h2 span {
+        font-size: 40px;
+    }
+    .main_grid_contact {
+        flex-direction: column;
+        position: static;
+        width: 100%;
+    }
+    .map iframe {
+        height: 300px;
+    }
+    .map {
+        margin-bottom: 0em;
+    }
+    .w3ls-contact address {
+        margin-bottom: 0rem;
+        margin-top: 1rem;
+    }
 }
 @media(max-width:736px) {
-	.slider-info {
-		width: 100%;
-	}
-	.banner {
-		height: 64vw;
-	}
-	.blog-sec a {
-		padding: 12px 30px;
-		font-size: 14px;
-	}
-	.footer-top-grid h3 {
-		font-size: 25px;
-	}
-	h4.heading {
-		font-size: 24px;
-	}
-	.stats-inner-grid h4 {
-		font-size: 40px;
-	}
-	.menu li.active a {
-		color: #333;
-	}
-	ul.inner-dropdown {
-		padding: 5px !important;
-	}
-	.manager-img img.img1 {
-		width: 25%;
-	}
-	.client-info {
-		width: 70%;
-	}
-	.main-clients {
-		width: 100%;
-	}
-	h2.heading, h3.heading {
-		font-size: 35px;
-	}
-	.error-section h2 {
-		font-size: 70px;
-	}
-	.error-section h2 span {
-		font-size: 40px;
-	}
-	.error-section a {
-		padding: 12px 25px;
-		font-size: 15px;
-	}
+    .slider-info {
+        width: 100%;
+    }
+    .banner {
+        height: 64vw;
+    }
+    .blog-sec a {
+        padding: 12px 30px;
+        font-size: 14px;
+    }
+    .footer-top-grid h3 {
+        font-size: 25px;
+    }
+    h4.heading {
+        font-size: 24px;
+    }
+    .stats-inner-grid h4 {
+        font-size: 40px;
+    }
+    .menu li.active a {
+        color: #333;
+    }
+    ul.inner-dropdown {
+        padding: 5px !important;
+    }
+    .manager-img img.img1 {
+        width: 25%;
+    }
+    .client-info {
+        width: 70%;
+    }
+    .main-clients {
+        width: 100%;
+    }
+    h2.heading, h3.heading {
+        font-size: 35px;
+    }
+    .error-section h2 {
+        font-size: 70px;
+    }
+    .error-section h2 span {
+        font-size: 40px;
+    }
+    .error-section a {
+        padding: 12px 25px;
+        font-size: 15px;
+    }
 }
 @media(max-width:668px) {
-	.choose-icon {
-		width: 48.5%;
-	}
-	.choose {
-		bottom: -65%;
-		position: static !important;
-		width: 100%;
-		margin-top: 6em;
-	}	
-	.form {
-		padding: 3em 2em;
-	}
+    .choose-icon {
+        width: 48.5%;
+    }
+    .choose {
+        bottom: -65%;
+        position: static !important;
+        width: 100%;
+        margin-top: 6em;
+    }
+    .form {
+        padding: 3em 2em;
+    }
 }
 @media(max-width:600px) {
-	.agileinfo-logo h2 {
-		font-size: 2em;
-	}
-	.banner-text {
-		padding-top: 28vw;
-	}
-	.banner-text a {
-		padding: 11px 30px;
-		font-size: 15px;
-	}
-	#logo a {
-		font-size: .65em;
-	}
-	.inner-banner {
-		min-height: 30vw;
-	}
-}	
+    .agileinfo-logo h2 {
+        font-size: 2em;
+    }
+    .banner-text {
+        padding-top: 28vw;
+    }
+    .banner-text a {
+        padding: 11px 30px;
+        font-size: 15px;
+    }
+    #logo a {
+        font-size: .65em;
+    }
+    .inner-banner {
+        min-height: 30vw;
+    }
+}
 @media(max-width:568px) {
-	.top_header {
-		padding-right: 2em;
-	}
-	.top-grid span.fa {
-		font-size: 35px;
-	}
-	.gal {
-		width: 70%;
-		margin: 0 auto;
-	}
+    .top_header {
+        padding-right: 2em;
+    }
+    .top-grid span.fa {
+        font-size: 35px;
+    }
+    .gal {
+        width: 70%;
+        margin: 0 auto;
+    }
 }
 @media(max-width:480px) {
-	.top_header {
-		padding-right: 1em;
-	}
-	.banner {
-		height: 76vw;
-	}
-	.banner-text {
-		padding-top: 35vw;
-	}
-	h4.heading {
-		font-size: 20px;
-		line-height: 35px;
-	}
-	.shipping-right {
-		padding: 3em 3em;
-	}
-	.manager-img img.img1 {
-		width: 30%;
-	}
-	h3.team_name {
-		font-size: 18px;
-	}
-	span.team_role {
-		font-size: 14px;
-	}
-	.gal {
-		width: 80%;
-	}
-	.error-section h2 {
-		font-size: 60px;
-	}
-	.error-section h2 span {
-		font-size: 35px;
-	}
-	.input-group input[type="text"], .input-group input[type="email"] {
-		width: 100%;
-		font-size: 13px;
-		margin: 10px 0 5px;
-	}
-	.input-group input.margin2 {
-		margin-right: 0%;
-	}
-	.input-group1 button.btn {
-		width: 35%;
-	}
-	.map iframe {
-		height: 250px;
-	}
-	.w3ls-contact p {
-		font-size: 14px;
-	}
+    .top_header {
+        padding-right: 1em;
+    }
+    .banner {
+        height: 76vw;
+    }
+    .banner-text {
+        padding-top: 35vw;
+    }
+    h4.heading {
+        font-size: 20px;
+        line-height: 35px;
+    }
+    .shipping-right {
+        padding: 3em 3em;
+    }
+    .manager-img img.img1 {
+        width: 30%;
+    }
+    h3.team_name {
+        font-size: 18px;
+    }
+    span.team_role {
+        font-size: 14px;
+    }
+    .gal {
+        width: 80%;
+    }
+    .error-section h2 {
+        font-size: 60px;
+    }
+    .error-section h2 span {
+        font-size: 35px;
+    }
+    .input-group input[type="text"], .input-group input[type="email"] {
+        width: 100%;
+        font-size: 13px;
+        margin: 10px 0 5px;
+    }
+    .input-group input.margin2 {
+        margin-right: 0%;
+    }
+    .input-group1 button.btn {
+        width: 35%;
+    }
+    .map iframe {
+        height: 250px;
+    }
+    .w3ls-contact p {
+        font-size: 14px;
+    }
 }
 @media(max-width:415px) {
-	.shipping-right {
-		padding: 2em 2em;
-	}
-	.stats-inner-grid h4 {
-		font-size: 28px;
-	}
-	.banner {
-		margin-bottom: 46em;
-	}
-	.agileinfo-logo h2 {
-		font-size: 1.7em;
-	}
-	.banner-text {
-		padding-top: 40vw;
-	}
-	.banner {
-		height: 84vw;
-	}
-	.choose {
-		margin-top: 5em;
-	}
-	.choose-icon {
-		padding: 2em 0em;
-	}
-	.choose-icon span.fa {
-		font-size: 30px;
-	}
-	.our-services-text h4 {
-		font-size: 17px;
-		margin-bottom: 13px;
-		margin-top: 10px;
-	}
-	.banner {
-		margin-bottom: 36em;
-	}
-	.our-services-icon span.fa {
-		font-size: 40px;
-	}
-	.manager-img img.img1 {
-		width: 35%;
-	}
-	.inner-banner {
-		min-height: 35vw;
-	}
-	.client-info {
-		width: 80%;
-	}
-	.feedback-top h4 {
-		font-size: 18px;
-		line-height: 20px;
-	}
-	h2.heading, h3.heading {
-		font-size: 30px;
-	}
-	.gal {
-		width: 90%;
-	}
-	.popup {
-		margin: 8em 1em;
-		padding: 2em 1em;
-	}
-	.error-section h2 span {
-		font-size: 30px;
-		display: block;
-		margin-bottom: 15px;
-	}
-	.error-section h2 {
-		font-size: 55px;
-	}
-	.w3ls-contact h3, .form h3 {
-		font-size: 20px;
-	}
+    .shipping-right {
+        padding: 2em 2em;
+    }
+    .stats-inner-grid h4 {
+        font-size: 28px;
+    }
+    .banner {
+        margin-bottom: 48em;
+    }
+    .agileinfo-logo h2 {
+        font-size: 1.7em;
+    }
+    .banner-text {
+        padding-top: 25vw;
+    }
+    .banner {
+        height: 55vw;
+    }
+    .choose {
+        margin-top: 5em;
+    }
+    .choose-icon {
+        padding: 2em 0em;
+    }
+    .choose-icon span.fa {
+        font-size: 30px;
+    }
+    .our-services-text h4 {
+        font-size: 17px;
+        margin-bottom: 13px;
+        margin-top: 10px;
+    }
+    .banner {
+        margin-bottom: 36em;
+    }
+    .our-services-icon span.fa {
+        font-size: 40px;
+    }
+    .manager-img img.img1 {
+        width: 35%;
+    }
+    .inner-banner {
+        min-height: 35vw;
+    }
+    .client-info {
+        width: 80%;
+    }
+    .feedback-top h4 {
+        font-size: 18px;
+        line-height: 20px;
+    }
+    h2.heading, h3.heading {
+        font-size: 30px;
+    }
+    .gal {
+        width: 90%;
+    }
+    .popup {
+        margin: 8em 1em;
+        padding: 2em 1em;
+    }
+    .error-section h2 span {
+        font-size: 30px;
+        display: block;
+        margin-bottom: 15px;
+    }
+    .error-section h2 {
+        font-size: 55px;
+    }
+    .w3ls-contact h3, .form h3 {
+        font-size: 20px;
+    }
 }
 @media(max-width:384px) {
-	.top-grid span.fa {
-		font-size: 20px;
-		margin-top: 5px;
-	}
-	.top_header p {
-		font-size: 13px;
-	}
-	#logo a {
-		font-size: .6em;
-	}
-	.agileinfo-logo h2 {
-		font-size: 1.5em;
-	}
-	.banner-text {
-		padding-top: 44vw;
-	}
-	.banner {
-		height: 88vw;
-	}
-	.choose-icon {
-		padding: 2em 1em;
-		width: 100%;
-	}
-	.choose {
-		width: 80%;
-	}
-	.stats-inner-grid h4 {
-		font-size: 28px;
-		float: none;
-	}
-	.stats-inner-grid p {
-		float: none;
-		margin-left: 0px;
-	}
-	.footer-top-grid h3 {
-		font-size: 20px;
-	}
-	.footer_w3layouts_section_1its h3, .footer_w3layouts_section_1its h2 {
-		font-size: 18px;
-		letter-spacing: 1px;
-	}
-	.manager-img img.img1 {
-		width: 45%;
-	}
-	.banner-text a {
-		padding: 10px 25px;
-		font-size: 13px;
-	}
-	.our-services-text {
-		padding: 26px 24px;
-	}
-	.toggle {
-		padding: 7px 15px;
-		font-size: 15px;
-	}
-	.our-services-icon {
-		width: 60px;
-		top: -5px;
-		padding-top: 5px;
-	}
-	.our-services-icon span.fa {
-		font-size: 30px;
-	}
-	.inner-banner {
-		min-height: 43vw;
-	}
-	ul.team-social li a span.fa {
-		font-size: 13px;
-	}
+    .top-grid span.fa {
+        font-size: 20px;
+        margin-top: 5px;
+    }
+    .top_header p {
+        font-size: 13px;
+    }
+    #logo a {
+        font-size: .6em;
+    }
+    .agileinfo-logo h2 {
+        font-size: 1.5em;
+    }
+    .banner-text {
+        padding-top: 44vw;
+    }
+    .banner {
+        height: 88vw;
+    }
+    .choose-icon {
+        padding: 2em 1em;
+        width: 100%;
+    }
+    .choose {
+        width: 80%;
+    }
+    .stats-inner-grid h4 {
+        font-size: 28px;
+        float: none;
+    }
+    .stats-inner-grid p {
+        float: none;
+        margin-left: 0px;
+    }
+    .footer-top-grid h3 {
+        font-size: 20px;
+    }
+    .footer_w3layouts_section_1its h3, .footer_w3layouts_section_1its h2 {
+        font-size: 18px;
+        letter-spacing: 1px;
+    }
+    .manager-img img.img1 {
+        width: 45%;
+    }
+    .banner-text a {
+        padding: 10px 25px;
+        font-size: 13px;
+    }
+    .our-services-text {
+        padding: 26px 24px;
+    }
+    .toggle {
+        padding: 7px 15px;
+        font-size: 15px;
+    }
+    .our-services-icon {
+        width: 60px;
+        top: -5px;
+        padding-top: 5px;
+    }
+    .our-services-icon span.fa {
+        font-size: 30px;
+    }
+    .inner-banner {
+        min-height: 43vw;
+    }
+    ul.team-social li a span.fa {
+        font-size: 13px;
+    }
 }
 @media(max-width:990px) {
-	
+
 }
 
 /*-- //Responsive design --*/
