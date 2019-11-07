@@ -26,8 +26,8 @@ public class IndexController {
     @GetMapping("index")
     public String index(Model model){
         List<Dictionary> dictionaries = dictionaryService.listbyPid(0L);
-        model.addAttribute("dictionaries",dictionaries);
-        return "pages/index";
+       // model.addAttribute("dictionaries",dictionaries);
+        return "pages/home";
     }
 
     @GetMapping("list_2")

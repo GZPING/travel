@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"><head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Home</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<meta name="keywords" content="">
+
+    <script>
+        addEventListener("load", function () {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
+	
+	<!-- css files -->
+    <link th:href="@{/lib/css/bootstrap.css}" rel="stylesheet" type="text/css"><!-- bootstrap css -->
+    <link th:href="@{/css/index.css}" rel="stylesheet" type="text/css"><!-- custom css -->
+    <link th:href="@{/lib/css/font-awesome.min.css}" rel="stylesheet"><!-- fontawesome css -->
+	<!-- //css files -->
+	<link th:href="@{/lib/css/css}" rel="stylesheet">
+
+	<!-- //google fonts -->
+	
+</head>
+<body>
+
+<!-- //header -->
+<header>
+	<div class="container">
+		<!-- top header -->
+		<!-- nav -->
+		<nav class="pt-2">
+			<div id="logo">
+				<h1> <a href="#"><span class="fa fa-ship"></span> Travers</a></h1>
+			</div>
+			<label for="drop" class="toggle">Menu</label>
+			<input type="checkbox" id="drop">
+		</nav>
+		<!-- //nav -->
+	</div>
+</header>
+<!-- //header -->
+		
+<!-- banner -->
+<section class="banner position-relative" id="home">
+	<div class="container">
+		<div class="banner-text">
+			<div class="slider-info">
+				<div class="agileinfo-logo mt-lg-5">
+					<h2>Ship Anything <br> Around the World</h2>
+					<!--<a href="#">Contact Us</a>-->
+				</div>
+			</div>
+		</div>
+		<div class="choose text-center position-absolute d-lg-flex">
+			<a class="choose-icon">
+				<span class="fa fa-ship" aria-hidden="true"></span>
+				<div class=" choose-grid">
+					<h3 class="mt-4">Sea Freight</h3>
+					<p class="">Shipping via Sea.</p>
+				</div>
+			</a>
+			<a class="choose-icon">
+				<span class="fa fa-truck" aria-hidden="true"></span>
+				<div class="choose-grid">
+					<h3 class="mt-4">Truck Transport</h3>
+					<p class="">Container Shipping.</p>
+				</div>
+			</a>
+			<a class="choose-icon">
+				<span class="fa fa-ship" aria-hidden="true"></span>
+				<div class="choose-grid">
+					<h3 class="mt-4">Ocean Freight</h3>
+					<p class="">Shipping via Ocean.</p>
+				</div>
+			</a>
+			<a class="choose-icon">
+				<span class="fa fa-plane" aria-hidden="true"></span>
+				<div class="choose-grid">
+					<h3 class="mt-4">Air Freight</h3>
+					<p class="">Shipping via Air.</p>
+				</div>
+			</a>
+			<a class="choose-icon mr-0">
+				<span class="fa fa-truck" aria-hidden="true"></span>
+				<div class="choose-grid">
+					<h3 class="mt-4">Land Freight</h3>
+					<p class="">Shipping via vehicles.</p>
+				</div>
+			</a>
+			<a class="choose-icon mr-0">
+				<span class="fa fa-truck" aria-hidden="true"></span>
+				<div class="choose-grid">
+					<h3 class="mt-4">Land Freight</h3>
+					<p class="">Shipping via vehicles.</p>
+				</div>
+			</a>
+			<div class="clearfix"></div>
+		</div>
+	</div>
+</section>
+<div class="clearfix"></div>
+<!-- //banner -->
+<!-- shipping -->
+<section class="shipping py-5">
+	<div class="container py-lg-5 py-md-3">
+		<div class="row">
+			<div class="col-lg-5 p-md-0">
+				<img th:src="@{/images/about.jpg}" alt="" class="img-fluid">
+			</div>
+			<div class="col-lg-7 p-0 mt-lg-0 mt-4">
+				<div class="shipping-right">
+					<h4 class="heading"> Your goods transport cost starts from 12$.</h4>
+						<p class="mt-3">Integer pulvinar leo id viveerrra feugiat. Pellenttesque libero ut justo, semper at tempus vel, ultrices ipsum ligula. Nullae sollicit udin velit. semper at tempus vel  pulvinar leo id viverra feugiat semper at tempus ultrices ipsum pulvinar.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- //shipping -->
+
+<!-- footer-top -->
+<section class="footer-top py-5">
+	<div class="container">
+		<div class="row footer-top-grid">
+			<div class="col-sm-6">
+				<h3>Contact Us</h3>
+				<p>Call us, we are 24/7 Helpline</p>
+			</div>
+			<div class="col-sm-6 text-sm-right mt-sm-0 mt-3">
+				<h3><span class="fa fa-phone" aria-hidden="true"></span> +150 7835 5726</h3>
+			</div>
+		</div>
+	</div>
+</section>
+
+</body></html>
