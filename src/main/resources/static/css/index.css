@@ -490,7 +490,7 @@ li > a:only-child:after { content: ''; }
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 1px;
-  /* line-height: 10px;*/
+    /* line-height: 10px;*/
 }
 
 .choose-icon span.fa {
@@ -1724,7 +1724,7 @@ ul.team-social li a  span.fa{
         margin-top: 10px;
     }
     .banner {
-        margin-bottom: 36em;
+        margin-bottom: 46em;
     }
     .our-services-icon span.fa {
         font-size: 40px;
