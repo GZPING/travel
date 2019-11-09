@@ -30,10 +30,10 @@ public class IndexController {
         return "pages/home";
     }
 
-    @GetMapping("list_2")
+    @GetMapping("list")
     public String list2(Model model,@RequestParam("id") Long id){
         List<Dictionary> dictionaries = dictionaryService.listbyPid(id);
         model.addAttribute("dictionaries",dictionaries);
-        return "pages/list_2";
+        return "pages/list";
     }
 }
