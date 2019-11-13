@@ -1,200 +1,162 @@
 <!DOCTYPE html>
-<!-- saved from url=(0042)https://m.runoob.com/ado/ado-tutorial.html -->
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"><head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Home</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <meta name="viewport" content="width=device-width">
+	<meta name="keywords" content="">
 
-    <link rel="apple-touch-icon" href="https://static.runoob.com/images/icon/mobile-icon.png">
-    <meta name="apple-mobile-web-app-title" content="菜鸟教程">
-    <link rel="canonical" href="https://www.runoob.com/ado/ado-tutorial.html">
+	<script>
+		addEventListener("load", function () {
+			setTimeout(hideURLbar, 0);
+		}, false);
 
-    <title>${title}</title>
-    <link rel="stylesheet" type="text/css" media="all" th:href="@{/css/style.css}">
-    <link rel="stylesheet" type="text/css" th:href="@{/css/prettify.css}">
-    <meta name="keywords" content="travel 旅游">
-    <meta name="description" content="旅游广告主界面">
-    <script th:src="@{/static/lib/jquery.min.js}"></script>
-    <script th:src="@{/static/lib/hm.js}"></script>
-    <script type="text/javascript">
-        $(function () {
-            $(".menu").bind("click", function () {
-                var $content = $(this).next(".menu-main");
-                if ($content.is(":visible")) {
-                    $content.hide();
-                } else {
-                    $content.show();
-                }
-            });
+		function hideURLbar() {
+			window.scrollTo(0, 1);
+		}
+	</script>
 
-        })
-    </script>
+	<!-- css files -->
+	<link th:href="@{/lib/css/bootstrap.css}" rel="stylesheet" type="text/css"><!-- bootstrap css -->
+	<!-- <link th:href="@{/css/index.css}" rel="stylesheet" type="text/css">-->
+	<link th:href="@{/css/list.css}" rel="stylesheet" type="text/css">
+	<link th:href="@{/lib/font-awesome/css/font-awesome.min.css}" rel="stylesheet"><!-- fontawesome css -->
+	<!-- //css files -->
+	<link th:href="@{/lib/css/css}" rel="stylesheet">
+
+	<!-- //google fonts -->
+
 </head>
-<body class="custom-background">
-<div id="wrapper">
-    <div id="header">
-        <h1><a href="https://m.runoob.com/"><span class="blog-name">菜鸟教程</span><span class="blog-title"></span></a></h1>
-        <span class="menu">≡</span>
-        <div class="menu-main">
-            <ul>
-                <li class="cat-item cat-item-16"><a href="https://m.runoob.com/ado/"
-                                                    title="ADO，即 ActiveX 数据对象（ActiveX Data Objects），是微软公司提出的应用程序接口，用于访问关系或非关系数据库中的数据。">ADO
-                    教程</a>
-                </li>
-            </ul>
-        </div>
-    </div>
-    <div class="browse">现在位置: <a title="返回首页" href="">首页</a> &gt;
-        <a href="">ADO 教程</a> &gt; 正文
-    </div>
+<body>
 
+<!-- //header -->
+<header>
+	<div class="container">
+		<!-- top header -->
+		<!-- nav -->
+		<nav class="pt-2">
+			<div id="logo">
+				<h1> <a href="#"><span class="fa fa-ship"></span> Travers</a></h1>
+			</div>
+			<label for="drop" class="toggle">Menu</label>
+			<input type="checkbox" id="drop">
+		</nav>
+		<!-- //nav -->
+	</div>
+</header>
+<!-- //header -->
 
-    <div id="main">
+<!-- banner -->
+<section class="banner position-relative" id="home">
+	<div class="container">
+		<div class="banner-text">
+			<div class="slider-info">
+				<div class="agileinfo-logo mt-lg-5">
+					<h2>TRAVELS <br> 让旅游变得更简单</h2>
+					<!--<a href="#">Contact Us</a>-->
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- //banner -->
+<!-- about -->
+<section class="shipping py-5">
+	<!-- features -->
+	<div class="features">
+		<div class="container">
+			<div class="w3ls-title">
+				<h3 class="agileits-title">Features</h3>
+			</div>
+			<div class="features-agilerow">
+				<div class="col-sm-6 features-left">
+					<div class="features-w3grid">
+						<div class="col-xs-3 features-w3grid-left">
+							<i class="fa fa-heart-o" aria-hidden="true"></i>
+						</div>
+						<div class="col-xs-9 features-w3grid-right">
+							<h4>Itaque earum rerum </h4>
+							<p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum </p>
+						</div>
+						<div class="clearfix"> </div>
+					</div>
+					<div class="features-w3grid features-w3grid-mdl">
+						<div class="col-xs-3 features-w3grid-left">
+							<i class="fa fa-cogs" aria-hidden="true"></i>
+						</div>
+						<div class="col-xs-9 features-w3grid-right">
+							<h4>Sapiente delectus</h4>
+							<p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum </p>
+						</div>
+						<div class="clearfix"> </div>
+					</div>
+					<div class="features-w3grid">
+						<div class="col-xs-3 features-w3grid-left">
+							<i class="fa fa-line-chart" aria-hidden="true"></i>
+						</div>
+						<div class="col-xs-9 features-w3grid-right">
+							<h4>Itaque earum rerum </h4>
+							<p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum </p>
+						</div>
+						<div class="clearfix"> </div>
+					</div>
+				</div>
+				<div class="col-sm-6 features-left">
+					<div class="features-w3grid">
+						<div class="col-xs-3 features-w3grid-left">
+							<i class="fa fa-cogs" aria-hidden="true"></i>
+						</div>
 
-        <div class="primary">
+						<div class="col-xs-9 features-w3grid-right">
+							<h4>Itaque earum rerum </h4>
+							<p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum </p>
+						</div>
+						<div class="clearfix"> </div>
+					</div>
+					<div class="features-w3grid features-w3grid-mdl">
+						<div class="col-xs-3 features-w3grid-left">
+							<i class="fa fa-line-chart" aria-hidden="true"></i>
+						</div>
 
-            <div class="archive_info">
+						<div class="col-xs-9 features-w3grid-right">
+							<h4>Sapiente delectus</h4>
+							<p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum </p>
+						</div>
+						<div class="clearfix"> </div>
+					</div>
+					<div class="features-w3grid">
+						<div class="col-xs-3 features-w3grid-left">
+							<i class="fa fa-heart-o" aria-hidden="true"></i>
+						</div>
+						<div class="col-xs-9 features-w3grid-right">
+							<h4>Itaque earum rerum </h4>
+							<p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum </p>
+						</div>
+						<div class="clearfix"> </div>
+					</div>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+	</div>
+	<!-- //features -->
+	</div>
+</section>
+<!-- //about -->
 
-                <h1>ADO <span class="color_h1">教程</span>
-                </h1>
-                <br>
-                <div class="tutintro">
-                    <p>ADO 是一项微软的技术, ADO 指 ActiveX 数据对象（ActiveX Data Objects）。</p>
-                    <p>在我们的 ADO 教程中，您将学到有关 ADO 的知识，以及如何使用 ADO 从您的网站访问数据库。</p>
-                    <p><b>现在开始学习 ADO!</b></p>
-                </div>
+<!-- footer-top -->
+<section class="footer-top py-5">
+	<div class="container">
+		<div class="row footer-top-grid">
+			<div class="col-sm-6">
+				<h3>Contact Us</h3>
+				<p>Call us, we are 24/7 Helpline</p>
+			</div>
+			<div class="col-sm-6 text-sm-right mt-sm-0 mt-3">
+				<h3><span class="fa fa-phone" aria-hidden="true"></span> +150 7835 5726</h3>
+			</div>
+		</div>
+	</div>
+</section>
 
-                <h2 class="tutheader">ADO 参考手册</h2>
-                <p>在菜鸟教程，我们为您提供完整的 ADO 参考手册，其中包括内建对象，以及它们的属性和方法。</p>
-                <p><a href="https://m.runoob.com/ado/ado-command.html" title="ADO 对象参考手册" target="_blank">ADO 对象参考手册</a>
-                </p>
-
-                <h2 class="tutheader">ADO 实例</h2>
-                <p>通过实例来学习！因为 ASP 脚本只能在服务器端执行，所以你无法在浏览器中查看 ASP 代码，你能看到的仅仅是由 ASP 输出的纯粹的 HTML 代码。
-                </p>
-                <p><a href="https://www.runoob.com/ado/ado-examples.html" target="_blank">ADO 实例!</a></p>
-                <div class="scroll-top"><a href="javascript:scroll(0,0)">返回顶部</a></div>
-            </div>
-            <div class="clear"></div>
-            <div id="tmallad" style=""><!-- js 判断微信去掉 -->
-            </div>
-            <div id="googlead">
-                <!-- 预留广告位 -->
-            </div>
-        </div>
-        <!-- content -->
-
-        <!-- main-->
-        <div class="navigation">
-            <div class="nav-previous"></div>
-            <div class="nav-next"><a href="https://m.runoob.com/ado/ado-intro.html" rel="next">下一篇 &gt; </a></div>
-            <div class="clear"></div>
-        </div>
-
-        <div class="footer_content">
-            © 2019 菜鸟教程<br>
-            <p id="back-top" style="display: none;"><a
-                    href="https://m.runoob.com/ado/ado-tutorial.html#top"><span>∧</span></a></p>
-
-            <p id="shop" style="position:fixed;right:30px;bottom:30px;display:none;"><a
-                    href="https://www.runoob.com/shoppinglist"><span><svg style="enable-background:new 0 0 500 500;" version="1.1" viewBox="0 0 500 500" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="add-buy-plus-shopping-cart"><g><polygon points="500,250 473.216,279.409 491.536,314.718 458.049,336.172 466.532,375.03 428.619,387.055     426.778,426.778 387.044,428.619 375.02,466.543 336.161,458.049 314.707,491.547 279.409,473.226 250,500 220.581,473.226     185.282,491.547 163.818,458.049 124.959,466.543 112.945,428.619 73.222,426.778 71.371,387.044 33.458,375.021 41.941,336.172     8.453,314.718 26.774,279.409 0,250 26.774,220.591 8.453,185.282 41.941,163.829 33.458,124.97 71.371,112.956 73.222,73.222     112.956,71.381 124.97,33.468 163.829,41.952 185.282,8.463 220.581,26.784 250,0 279.409,26.784 314.718,8.463 336.172,41.962     375.03,33.468 387.044,71.381 426.778,73.232 428.619,112.966 466.532,124.98 458.049,163.839 491.536,185.282 473.216,220.591       " style="fill:#9DD2D8;"></polygon><g
-                    id="_x31_9"><g><path d="M341.074,158.666c-16.82,0-30.736,12.268-33.371,28.351c-0.295,1.796-0.488,3.632-0.488,5.514      c0,3.744,0.631,7.334,1.755,10.702c3.291,9.862,10.986,17.69,20.763,21.169c3.55,1.267,7.359,1.994,11.342,1.994      c1.603,0,3.169-0.152,4.715-0.366c16.46-2.304,29.135-16.418,29.135-33.498C374.924,173.818,359.771,158.666,341.074,158.666z" style="fill:#FC6E51;"></path><path
-                    d="M357.981,197.901h-3.107h-8.393v11.525c0,2.971-2.432,5.381-5.407,5.381      c-2.965,0-5.381-2.411-5.381-5.381v-5.086v-1.109v-5.33h-11.505c-2.985,0-5.392-2.406-5.392-5.371      c0-2.98,2.406-5.386,5.392-5.386h11.505v-0.127v-11.393c0-2.98,2.416-5.381,5.381-5.381c2.976,0,5.407,2.401,5.407,5.381v11.393      v0.127h11.5c0.122,0,0.224,0.061,0.341,0.066c2.787,0.193,5.04,2.462,5.04,5.32      C363.362,195.496,360.932,197.901,357.981,197.901z"
-                    style="fill:#F4F8F8;"></path></g><path
-                    d="M299.963,324.005c0,9.572,7.761,17.329,17.334,17.329c9.572,0,17.328-7.757,17.328-17.329     c0-9.577-7.756-17.339-17.328-17.339C307.724,306.666,299.963,314.428,299.963,324.005z"
-                    style="fill:#484B4D;"></path><path
-                    d="M181.986,324.005c0,9.572,7.757,17.329,17.334,17.329c9.572,0,17.329-7.757,17.329-17.329     c0-9.577-7.757-17.339-17.329-17.339C189.743,306.666,181.986,314.428,181.986,324.005z"
-                    style="fill:#484B4D;"></path><path
-                    d="M172.948,218.064l25.248,85.81h122.452l22.532-69.779c-0.702,0.041-1.394,0.112-2.107,0.112     c-9.089,0-17.481-2.96-24.332-7.914h-23.016l1.978-23.061h5.143c-0.911-3.423-1.445-6.998-1.445-10.702     c0-1.877,0.168-3.708,0.407-5.514H182.078l-8.27-27.974h-0.127h-18.184h-30.426v14.76h34.79L172.948,218.064z M278.951,290.736     h-34.16l-1.953-22.787h38.061L278.951,290.736z M281.692,258.723H242.05l-1.984-23.203h43.609L281.692,258.723z M292.939,235.52     h33.493l-6.897,23.203h-28.585L292.939,235.52z M290.161,267.949h26.632l-6.76,22.787h-21.825L290.161,267.949z M286.438,203.232     l-1.973,23.061h-45.186l-1.974-23.061H286.438z M235.535,290.736h-24.76l-6.328-22.787h29.14L235.535,290.736z M232.793,258.723     h-30.909l-6.454-23.203h35.375L232.793,258.723z M228.042,203.232l1.974,23.061H193.69l-6.815-23.061H228.042z"
-                    style="fill:#F4F8F8;"></path></g></g></g><g id="Layer_1"></g></svg></span></a></p>
-
-        </div>
-        <script type="text/javascript">
-            //判断是否微信登陆
-            function isWeiXin() {
-                var ua = window.navigator.userAgent.toLowerCase();
-                if (ua.match(/MicroMessenger/i) == 'micromessenger') {
-                    return true;
-                } else {
-                    return false;
-                }
-            }
-
-            $(document).ready(function () {
-                if (isWeiXin()) {
-                    $("#ad163").show();
-                    $("#shop").hide();
-                    $("#tmallad").hide();
-                    $("#startk").show();
-                } else {
-                    $("#ad163").hide();
-                    $("#shop").hide();
-                    $("#tmallad").show();
-                    $("#startk").hide();
-                }
-
-                //代码高亮
-                $('pre').each(function () {
-                    if (!$(this).hasClass("prettyprint")) {
-                        $(this).addClass("prettyprint");
-                    }
-                });
-                $("#back-top").hide();
-                $(function () {
-                    $(window).scroll(function () {
-                        if ($(this).scrollTop() > 100) {
-                            $('#back-top').fadeIn();
-                        } else {
-                            $('#back-top').fadeOut();
-                        }
-                    });
-                    $('#back-top a').click(function () {
-                        $('body,html').animate({
-                            scrollTop: 0
-                        }, 800);
-                        return false;
-                    });
-                    var host = window.location.host;
-                    htmlstr = '课程推荐：<a href="http://163.lu/PY7Sx3" target="_blank">Python 数据分析师</a>';
-                    if ($('#python3book').length) {
-                        $('#python3book').html(htmlstr).hide();
-                    }
-                    if (/(iPhone|iPad|iPod|iOS|BlackBerry|IEMobile|Android)/i.test(navigator.userAgent)) {
-                        $(".html5header").hide();
-                        $(".html5header-mobile").show();
-                        if (false && $("#ad").length != 0 && isWeiXin() === false) {
-                            $.getJSON("/api/ads.php", function (data) {
-                                console.log(data);
-                                if (data.tbad.is_show) {
-                                    _html = '<a href="' + data.tbad.url + '" target="_blank"><img style="width:100%;" src="' + data.tbad.image + '"></a>';
-                                    $("#ad").html(_html);
-                                }
-                            });
-                        }
-                    }
-                });
-
-            });
-        </script>
-
-        <script>
-            var _hmt = _hmt || [];
-            (function () {
-                var hm = document.createElement("script");
-                hm.src = "https://hm.baidu.com/hm.js?bd5fc5d5ff560597f5b7b9bc582a1dd3";
-                var s = document.getElementsByTagName("script")[0];
-                s.parentNode.insertBefore(hm, s);
-            })();
-            //代码高亮
-            $('pre').each(function () {
-                if (!$(this).hasClass("prettyprint")) {
-                    $(this).addClass("prettyprint");
-                }
-            });
-        </script>
-
-    </div>
-</div>
-</body>
-</html>
+</body></html>

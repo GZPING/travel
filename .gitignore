@@ -1,3 +1,4 @@
 /target/
 /targer/
 /.mvn/wrapper/
+/resources/rebel.xml
