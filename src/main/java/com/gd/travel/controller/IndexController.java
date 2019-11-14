@@ -31,9 +31,16 @@ public class IndexController {
     }
 
     @GetMapping("list")
-    public String list2(Model model,@RequestParam("id") Long id){
+    public String list(Model model,@RequestParam("id") Long id){
         List<Dictionary> dictionaries = dictionaryService.listbyPid(id);
         model.addAttribute("dictionaries",dictionaries);
         return "pages/list";
+    }
+
+    @GetMapping("detail")
+    public String detail(Model model,@RequestParam("id") Long id){
+        Dictionary dictionary = dictionaryService.getById(id);
+        model.addAttribute("dictionary",dictionary);
+        return "pages/detail";
     }
 }
