@@ -30,7 +30,7 @@ class DictionaryServiceImplTest extends SpringBootTestConfig {
     void save() {
         List<Dictionary> dicts = new ArrayList<>();
         for (int i = 0; i < 10; i++) {
-            dicts.add(Dictionary.builder().pid(i).name("第2-1层菜单" + i).remark("第二层菜单 Remark" + i)
+            dicts.add(Dictionary.builder().pid(1).name("省内" + i).remark("省内" + i)
                     .tail(false).createtime(LocalDateTime.now()).build());
         }
         dictionaryService.saveBatch(dicts);
