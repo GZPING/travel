@@ -1,6 +1,9 @@
 package com.gd.travel.entity;
 
 import java.time.LocalDateTime;
+
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.*;
@@ -24,8 +27,6 @@ import lombok.experimental.Accessors;
 public class Dictionary extends BaseEntity {
 
     private static final long serialVersionUID=1L;
-
-    private Long id;
 
     @ApiModelProperty(value = "字典名称")
     private String name;
