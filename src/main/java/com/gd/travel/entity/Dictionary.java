@@ -28,6 +28,9 @@ public class Dictionary extends BaseEntity {
 
     private static final long serialVersionUID=1L;
 
+    @TableId(type = IdType.AUTO)
+    private Long id;
+
     @ApiModelProperty(value = "字典名称")
     private String name;
 

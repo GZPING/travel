@@ -26,6 +26,9 @@ public class Companies extends BaseEntity {
 
     private static final long serialVersionUID=1L;
 
+    @TableId(type = IdType.AUTO)
+    private Long id;
+
     @ApiModelProperty(value = "公司名称")
     private String name;
 

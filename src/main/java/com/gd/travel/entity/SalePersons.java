@@ -25,6 +25,9 @@ public class SalePersons extends BaseEntity {
 
     private static final long serialVersionUID=1L;
 
+    @TableId(type = IdType.AUTO)
+    private Long id;
+
     @ApiModelProperty(value = " 销售名称")
     private String name;
 
