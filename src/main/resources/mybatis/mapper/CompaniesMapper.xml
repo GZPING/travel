@@ -2,4 +2,26 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.gd.travel.mapper.CompaniesMapper">
 
+    <resultMap id="resultMap" type="com.gd.travel.entity.Companies">
+        <result column="id" property="id" jdbcType="DECIMAL" ></result>
+        <result column="name" property="name" jdbcType="VARCHAR" ></result>
+        <result column="keyword" property="keyword" jdbcType="VARCHAR" ></result>
+        <result column="link" property="link" jdbcType="VARCHAR" ></result>
+        <result column="address" property="address" jdbcType="VARCHAR" ></result>
+        <result column="type" property="type" jdbcType="INTEGER" ></result>
+        <result column="createtime" property="createtime" jdbcType="DATE" ></result>
+        <result column="permitNumber" property="permitNumber" jdbcType="VARCHAR" ></result>
+        <result column="ownerUser" property="ownerUser" jdbcType="VARCHAR" ></result>
+        <result column="route" property="route" jdbcType="VARCHAR" ></result>
+        <collection property="salePersons" ofType="com.gd.travel.entity.SalePersons">
+            <result column="spId" property="id" jdbcType="DECIMAL" ></result>
+            <result column="name" property="name" jdbcType="VARCHAR" ></result>
+            <result column="wechatNo" property="wechatNo" jdbcType="VARCHAR" ></result>
+            <result column="type" property="type" jdbcType="INTEGER" ></result>
+        </collection>
+    </resultMap>
+    <select id="getDetailById" resultMap="resultMap">
+        select c.*,sp.id spId,sp.name,sp.phone,sp.wechatNo,sp.type
+            from companies c left join sale_persons sp on sp.companiesId=c.id
+    </select>
 </mapper>

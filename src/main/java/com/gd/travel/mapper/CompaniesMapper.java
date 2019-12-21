@@ -13,5 +13,5 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  */
 public interface CompaniesMapper extends BaseMapper<Companies> {
 
-
+    Companies getDetailById(Long id);
 }

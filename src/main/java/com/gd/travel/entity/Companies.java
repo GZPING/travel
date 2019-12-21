@@ -60,6 +60,4 @@ public class Companies extends BaseEntity {
 
     @ApiModelProperty(value = "销售人员列表")
     private List<SalePersons> salePersons;
-
-
 }

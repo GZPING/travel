@@ -12,5 +12,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * @since 2019-12-21
  */
 public interface ICompaniesService extends IService<Companies> {
-
+    Companies getDetailById(Long id);
 }
