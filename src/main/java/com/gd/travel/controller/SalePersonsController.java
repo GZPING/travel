@@ -4,6 +4,7 @@ package com.gd.travel.controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import org.springframework.web.bind.annotation.RestController;
+import com.gd.travel.controller.BaseController;
 
 /**
  * <p>
@@ -11,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
  * </p>
  *
  * @author GD
- * @since 2019-10-21
+ * @since 2019-12-21
  */
 @RestController
 @RequestMapping("/sale-persons")

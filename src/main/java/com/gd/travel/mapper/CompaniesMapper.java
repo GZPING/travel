@@ -9,8 +9,9 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * </p>
  *
  * @author GD
- * @since 2019-10-21
+ * @since 2019-12-21
  */
 public interface CompaniesMapper extends BaseMapper<Companies> {
+
 
 }

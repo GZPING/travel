@@ -3,6 +3,7 @@ package com.gd.travel.entity;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
+import com.gd.travel.entity.BaseEntity;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
@@ -15,7 +16,7 @@ import lombok.experimental.Accessors;
  * </p>
  *
  * @author GD
- * @since 2019-10-21
+ * @since 2019-12-21
  */
 @Data
 @EqualsAndHashCode(callSuper = true)
@@ -38,5 +39,10 @@ public class SalePersons extends BaseEntity {
     @TableField("wechatNo")
     private String wechatNo;
 
+    @ApiModelProperty(value = "用户类型，1，散客，2.团队")
+    private Integer type;
 
+    @ApiModelProperty(value = "公司id")
+    @TableField("companiesId")
+    private Integer companiesId;
 }

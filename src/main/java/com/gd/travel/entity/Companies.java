@@ -1,9 +1,11 @@
 package com.gd.travel.entity;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
+import com.gd.travel.entity.BaseEntity;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
@@ -16,7 +18,7 @@ import lombok.experimental.Accessors;
  * </p>
  *
  * @author GD
- * @since 2019-10-21
+ * @since 2019-12-21
  */
 @Data
 @EqualsAndHashCode(callSuper = true)
@@ -46,6 +48,18 @@ public class Companies extends BaseEntity {
 
     @ApiModelProperty(value = "创建时间")
     private LocalDateTime createtime;
+
+    @ApiModelProperty(value = "许可证号")
+    private String permitNumber;
+
+    @ApiModelProperty(value = "负责人")
+    private String ownerUser;
+
+    @ApiModelProperty(value = "主营线路")
+    private String route;
+
+    @ApiModelProperty(value = "销售人员列表")
+    private List<SalePersons> salePersons;
 
 
 }
