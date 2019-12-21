@@ -17,6 +17,5 @@ import java.util.List;
  */
 public interface DictionaryMapper extends BaseMapper<Dictionary> {
 
-    @Select("select * from dictionary t where t.pid=#{pid}")
     List<Dictionary> listByPid(@Param("pid") Long pid);
 }

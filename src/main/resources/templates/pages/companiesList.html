@@ -61,16 +61,11 @@
 </section>
 <!-- //banner -->
 <!-- about -->
-<section class="shipping py-2">
-	<div class="container py-lg-1 py-md-3" th:each="dictionary : ${dictionaries}">
-		<div class="row" th:switch="${dictionary.getTail()}">
-			<a th:case="true"
-			   class="fire_alert bg_none alert alert-success" th:href="@{/page/companies(id=${dictionary.getId()})}">
-				<i class="fa fa-check-circle-o"></i><strong><span th:text="${dictionary.getName()}"></span></strong>
-			</a>
-			<a th:case="false"
-			   class="fire_alert bg_none alert alert-success" th:href="@{/page/list(id=${dictionary.getId()})}">
-				<i class="fa fa-check-circle-o"></i><strong><span th:text="${dictionary.getName()}"></span></strong>
+<section class="shipping min-s py-2">
+	<div class="container py-lg-1 py-md-3" th:each="company : ${companies}">
+		<div class="row">
+			<a class="fire_alert bg_none alert alert-success" th:href="@{/page/companiesDetail/(id=${company.getId()})}">
+				<i class="fa fa-check-circle-o"></i><strong><span th:text="${company.getName()}"></span></strong>
 			</a>
 		</div>
 	</div>

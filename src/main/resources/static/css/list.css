@@ -1484,3 +1484,19 @@ ul.team-social li a  span.fa{
 }
 
 /*-- //Responsive design --*/
+
+.features-w3grid {
+    margin: 10px 0 5px;
+}
+.features-w3grid h4{
+    margin: 10px 0 5px;
+}
+.features-w3grid p{
+    font-size: 20px;
+    min-height: 30px;
+    margin: 10px 0 5px;
+    padding: 10px 0;
+}
+.shopping{
+    min-height: 150px;
+}

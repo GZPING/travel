@@ -61,76 +61,70 @@
 </section>
 <!-- //banner -->
 <!-- about -->
-<section class="shipping py-5">
+<section class="shipping min-s py-5">
 	<!-- features -->
 	<div class="features">
 		<div class="container">
 			<div class="w3ls-title">
-				<h3 class="agileits-title">Features</h3>
+				<h3 class="agileits-title">详细信息</h3>
 			</div>
 			<div class="features-agilerow">
 				<div class="col-sm-6 features-left">
 					<div class="features-w3grid">
-						<div class="col-xs-3 features-w3grid-left">
-							<i class="fa fa-heart-o" aria-hidden="true"></i>
-						</div>
 						<div class="col-xs-9 features-w3grid-right">
-							<h4>Itaque earum rerum </h4>
-							<p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum </p>
+							<h4><i class="fa fa-heart-o" aria-hidden="true"></i>  专线名 </h4>
+							<p><span th:text="${companies.getName()}"></span></p>
+							<hr class="h-25"/>
 						</div>
 						<div class="clearfix"> </div>
 					</div>
 					<div class="features-w3grid features-w3grid-mdl">
-						<div class="col-xs-3 features-w3grid-left">
-							<i class="fa fa-cogs" aria-hidden="true"></i>
-						</div>
 						<div class="col-xs-9 features-w3grid-right">
-							<h4>Sapiente delectus</h4>
-							<p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum </p>
+							<h4><i class="fa fa-cogs" aria-hidden="true"></i> 主营线路</h4>
+							<p><span th:text="${companies.getRoute()}"></span> </p>
+							<hr class="h-25"/>
 						</div>
 						<div class="clearfix"> </div>
 					</div>
 					<div class="features-w3grid">
-						<div class="col-xs-3 features-w3grid-left">
-							<i class="fa fa-line-chart" aria-hidden="true"></i>
-						</div>
 						<div class="col-xs-9 features-w3grid-right">
-							<h4>Itaque earum rerum </h4>
-							<p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum </p>
+							<h4><i class="fa fa-line-chart" aria-hidden="true"></i> 负责人 </h4>
+							<p><span th:text="${companies.getOwnerUser()}"></span> </p>
+							<hr class="h-25"/>
 						</div>
 						<div class="clearfix"> </div>
 					</div>
 				</div>
 				<div class="col-sm-6 features-left">
 					<div class="features-w3grid">
-						<div class="col-xs-3 features-w3grid-left">
-							<i class="fa fa-cogs" aria-hidden="true"></i>
-						</div>
-
 						<div class="col-xs-9 features-w3grid-right">
-							<h4>Itaque earum rerum </h4>
-							<p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum </p>
+							<h4><i class="fa fa-cogs" aria-hidden="true"></i> 地址 </h4>
+							<p><span th:text="${companies.getAddress()}"></span></p>
+							<hr class="h-25"/>
 						</div>
 						<div class="clearfix"> </div>
 					</div>
 					<div class="features-w3grid features-w3grid-mdl">
-						<div class="col-xs-3 features-w3grid-left">
-							<i class="fa fa-line-chart" aria-hidden="true"></i>
-						</div>
-
 						<div class="col-xs-9 features-w3grid-right">
-							<h4>Sapiente delectus</h4>
-							<p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum </p>
+							<h4><i class="fa fa-line-chart" aria-hidden="true"></i> 销售联系人</h4>
+							<div class="container py-lg-1 py-md-3" th:each="person : ${companies.getSalePersons()}">
+								<div class="row" th:switch="${person.getType() == 1}">
+									<p><span th:text="${person.getName()}"></span>&nbsp;
+										<span th:text="${person.getPhone()}"></span>&nbsp;
+										<span th:case="true">(散客)</span>
+										<span th:case="false">(组团)</span>
+									</p>
+								</div>
+							</div>
+							<hr class="h-25"/>
 						</div>
 						<div class="clearfix"> </div>
 					</div>
 					<div class="features-w3grid">
-						<div class="col-xs-3 features-w3grid-left">
-							<i class="fa fa-heart-o" aria-hidden="true"></i>
-						</div>
 						<div class="col-xs-9 features-w3grid-right">
-							<h4>Itaque earum rerum </h4>
-							<p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum </p>
+							<h4><i class="fa fa-heart-o" aria-hidden="true"></i> 许可证号</h4>
+							<p><span th:text="${companies.getPermitNumber()}"></span></p>
+							<hr class="h-25"/>
 						</div>
 						<div class="clearfix"> </div>
 					</div>
@@ -153,7 +147,7 @@
 				<p>Call us, we are 24/7 Helpline</p>
 			</div>
 			<div class="col-sm-6 text-sm-right mt-sm-0 mt-3">
-				<h3><span class="fa fa-phone" aria-hidden="true"></span> +150 7835 5726</h3>
+				<h3><span class="fa fa-phone" aria-hidden="true"></span> +150 **** 5726</h3>
 			</div>
 		</div>
 	</div>

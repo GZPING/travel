@@ -2,6 +2,10 @@ package com.gd.travel.mapper;
 
 import com.gd.travel.entity.Companies;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.gd.travel.entity.CompaniesDTO;
+import org.apache.ibatis.annotations.Select;
+
+import java.util.List;
 
 /**
  * <p>
@@ -13,5 +17,7 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  */
 public interface CompaniesMapper extends BaseMapper<Companies> {
 
-    Companies getDetailById(Long id);
+    CompaniesDTO getDetailById(Long id);
+
+    List<Companies> listByPid(Long id);
 }

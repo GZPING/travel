@@ -1,16 +1,15 @@
 package com.gd.travel.entity;
 
-import java.time.LocalDateTime;
-import java.util.List;
-
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
-import com.gd.travel.entity.BaseEntity;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
+
+import java.time.LocalDateTime;
+import java.util.List;
 
 /**
  * <p>
@@ -24,7 +23,7 @@ import lombok.experimental.Accessors;
 @EqualsAndHashCode(callSuper = true)
 @Accessors(chain = true)
 @ApiModel(value="Companies对象", description="")
-public class Companies extends BaseEntity {
+public class CompaniesDTO extends BaseEntity {
 
     private static final long serialVersionUID=1L;
 
@@ -60,4 +59,7 @@ public class Companies extends BaseEntity {
 
     @ApiModelProperty(value = "父亲节点")
     private Long pid;
+
+    @ApiModelProperty(value = "销售人员列表")
+    private List<SalePersons> salePersons;
 }

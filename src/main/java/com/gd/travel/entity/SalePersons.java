@@ -44,5 +44,5 @@ public class SalePersons extends BaseEntity {
 
     @ApiModelProperty(value = "公司id")
     @TableField("companiesId")
-    private Integer companiesId;
+    private Long companiesId;
 }

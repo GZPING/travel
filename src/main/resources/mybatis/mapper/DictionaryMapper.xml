@@ -3,6 +3,6 @@
 <mapper namespace="com.gd.travel.mapper.DictionaryMapper">
 
     <select id="listByPid" resultType="com.gd.travel.entity.Dictionary">
-
+        select * from dictionary t where t.pid=#{pid}
     </select>
 </mapper>
