@@ -145,10 +145,8 @@ public class WeiboDataServiceImpl implements IWeiboDataService {
             rsakv = json.getString("rsakv");
             pubkey = json.getString("pubkey");
             flag = encodePwd(password);
-        } catch (UnsupportedEncodingException e) {
-            logger.info("preLogin:抛出UnsupportedEncoding异常:"+e);
         } catch (IOException e) {
-            logger.info("preLogin抛出IO异常:"+e);
+            logger.info("preLogin抛出IO异常:{}",e);
         }
         return flag;
     }

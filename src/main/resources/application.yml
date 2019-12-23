@@ -10,9 +10,9 @@ spring:
   #mysql
   datasource:
     name: travel
-    url: jdbc:mysql://127.0.0.1:3306/travel?useUnicode=true&characterEncoding=UTF8&serverTimezone=UTC
+    url: jdbc:mysql://172.17.0.12:3306/travel?useUnicode=true&characterEncoding=UTF8&serverTimezone=UTC
     username: root
-    password: 123456
+    password: Petter123.
     driver-class-name: com.mysql.jdbc.Driver
     type: com.alibaba.druid.pool.DruidDataSource
     druid:
