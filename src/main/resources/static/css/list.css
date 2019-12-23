@@ -1496,6 +1496,7 @@ ul.team-social li a  span.fa{
     min-height: 30px;
     margin: 10px 0 5px;
     padding: 10px 0;
+    line-height:30px;
 }
 .shopping{
     min-height: 150px;

@@ -16,14 +16,14 @@
         <result column="pid" property="pid" jdbcType="DECIMAL"></result>
         <collection property="salePersons" ofType="com.gd.travel.entity.SalePersons">
             <result column="spId" property="id" jdbcType="DECIMAL" ></result>
-            <result column="name" property="name" jdbcType="VARCHAR" ></result>
+            <result column="spname" property="name" jdbcType="VARCHAR" ></result>
             <result column="wechatNo" property="wechatNo" jdbcType="VARCHAR" ></result>
             <result column="phone" property="phone" jdbcType="VARCHAR" ></result>
-            <result column="type" property="type" jdbcType="INTEGER" ></result>
+            <result column="sptype" property="type" jdbcType="INTEGER" ></result>
         </collection>
     </resultMap>
     <select id="getDetailById" resultMap="resultMap">
-        select c.*,sp.id spId,sp.name,sp.phone,sp.wechatNo,sp.type
+        select c.*,sp.id spId,sp.name spname,sp.phone,sp.wechatNo,sp.type sptype
             from companies c left join sale_persons sp on sp.companiesId=c.id
             where c.id=#{id}
     </select>
