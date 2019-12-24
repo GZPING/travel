@@ -490,7 +490,7 @@ li > a:only-child:after { content: ''; }
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 1px;
-  /* line-height: 10px;*/
+    /* line-height: 10px;*/
 }
 
 .choose-icon span.fa {
@@ -849,7 +849,7 @@ ul.links li a{
 .inner-banner {
     background: url(../images/banner.jpg) no-repeat center;
     background-size: cover;
-    min-height: 20vw;
+    min-height: 10vw;
     position: relative;
 }
 .inner-banner:before {
@@ -1784,16 +1784,17 @@ ul.team-social li a  span.fa{
     }
     .banner-text {
         padding-top: 44vw;
+        padding-bottom: 10vw;
     }
     .banner {
         height: 88vw;
     }
     .choose-icon {
         padding: 2em 1em;
-        width: 100%;
+        width: 44%;
     }
     .choose {
-        width: 80%;
+        width: 100%;
     }
     .stats-inner-grid h4 {
         font-size: 28px;
