@@ -476,6 +476,9 @@ li > a:only-child:after { content: ''; }
 /*-- footer top-- */
 .footer-top {
     background: #00bcd4;
+    position:absolute;
+    bottom:0;
+    width: 100%;
 }
 .footer-top-grid h3{
     color: #fff;
