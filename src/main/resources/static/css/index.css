@@ -632,7 +632,7 @@ h4.heading {
 .shipping {
     background: #00bcd4;
     background: #f8f9fa;
-    min-height: 150px;
+    min-height: 360px;
 }
 .min-s .div{
     min-height: 150px;
@@ -699,7 +699,6 @@ p.card-text {
 /*-- footer top-- */
 .footer-top {
     background: #00bcd4;
-    position:absolute;
     bottom:0;
     width: 100%;
 }

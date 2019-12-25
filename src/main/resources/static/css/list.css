@@ -476,7 +476,6 @@ li > a:only-child:after { content: ''; }
 /*-- footer top-- */
 .footer-top {
     background: #00bcd4;
-    position:absolute;
     bottom:0;
     width: 100%;
 }
@@ -1141,7 +1140,7 @@ ul.team-social li a  span.fa{
         height: 54vw;
     }
     .banner-text {
-        padding-top: 20vw;
+        padding-top: 18vw;
     }
     .w3ls-contact h3,.form h3 {
         font-size: 22px;
@@ -1152,10 +1151,10 @@ ul.team-social li a  span.fa{
         width: 32.6%;
     }
     .banner {
-        height: 60vw;
+        height: 50vw;
     }
     .banner-text {
-        padding-top: 25vw;
+        padding-top: 18vw;
     }
     .agileinfo-logo h2 {
         font-size: 2.4em;
@@ -1196,7 +1195,7 @@ ul.team-social li a  span.fa{
         width: 100%;
     }
     .banner {
-        height: 64vw;
+        height: 50vw;
     }
     .blog-sec a {
         padding: 12px 30px;
@@ -1259,7 +1258,7 @@ ul.team-social li a  span.fa{
         font-size: 2em;
     }
     .banner-text {
-        padding-top: 28vw;
+        padding-top: 18vw;
     }
     .banner-text a {
         padding: 11px 30px;
@@ -1289,10 +1288,10 @@ ul.team-social li a  span.fa{
         padding-right: 1em;
     }
     .banner {
-        height: 76vw;
+        height: 50vw;
     }
     .banner-text {
-        padding-top: 35vw;
+        padding-top: 18vw;
     }
     h4.heading {
         font-size: 20px;
@@ -1351,7 +1350,7 @@ ul.team-social li a  span.fa{
         font-size: 1.7em;
     }
     .banner-text {
-        padding-top: 25vw;
+        padding-top: 18vw;
     }
     .banner {
         height: 55vw;
@@ -1426,10 +1425,10 @@ ul.team-social li a  span.fa{
         font-size: 1.5em;
     }
     .banner-text {
-        padding-top: 44vw;
+        padding-top: 20vw;
     }
     .banner {
-        height: 88vw;
+        height: 50vw;
     }
     .choose-icon {
         padding: 2em 1em;
@@ -1501,6 +1500,6 @@ ul.team-social li a  span.fa{
     padding: 10px 0;
     line-height:30px;
 }
-.shopping{
-    min-height: 150px;
+.shipping{
+    min-height: 360px;
 }
