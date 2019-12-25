@@ -1793,7 +1793,8 @@ ul.team-social li a  span.fa{
     }
     .choose-icon {
         padding: 2em 1em;
-        width: 44%;
+        width: 43%;
+        margin: 10px;
     }
     .choose {
         width: 100%;
