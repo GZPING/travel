@@ -5,6 +5,10 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.InputStreamReader;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -146,41 +150,93 @@ public class ReadHtmlTest {
                 "        </div><!--/分页--></div>\n" +
                 "</div>\n";
         //6.Jsoup解析html
+        html = readCityFile();
         Document document = Jsoup.parse(html);
         // 获取评论根节点数据
         Element listUl = document.getElementsByClass("list_ul").first();
         // 获取每一条评论
         Elements listLi = listUl.getElementsByClass("list_li");
+        // 记录父亲节点的评论id
+        String pCid = "";
+        handlerComment(listLi);
+    }
+
+    public static void handlerComment(Elements listLi){
         if(listLi != null){
             listLi.forEach(replyItemElement -> {
-               //  System.out.println(replyItemElement);
+                String commentId = null;
+                Element rootChild = null;
+
+                try {
+                    //  System.out.println(replyItemElement);
+                    System.out.println("评论mid:XXXXXX" );
+                    // 获取评论ID
+                    commentId = replyItemElement.attr("comment_id");
+                    System.out.println("comment_id:" + commentId);
+                    // 用户信息处理
+                    Element wbFace = replyItemElement.getElementsByClass("WB_face").first();
+                    String firstWbFace = wbFace.getElementsByTag("a").first().toString();
+                    String headUrl,uid,nickName;
+                    String uidReg = "usercard\\=\"id=(.*?)\"";
+                    String headUrlReg = "src\\=\"(.*?)\"";
+                    String nikeReg = "alt\\=\"(.*?)\"";
+                    headUrl = pattern(headUrlReg,firstWbFace);
+                    uid = pattern(uidReg,firstWbFace);
+                    nickName = pattern(nikeReg,firstWbFace);
+                    System.out.println("评论人头像:" + headUrl);
+                    System.out.println("评论人UID:" + uid);
+                    System.out.println("评论人昵称:" + nickName);
+                    // 用户信息处理 结束
+                    // 获取评论内容
+                    String wbText = replyItemElement.getElementsByClass("WB_text").text();
+                    String textReg = nickName + "：(.*)";
+                    String text = pattern(textReg,wbText);
+                    System.out.println("评论内容:" + text);
+                    Elements wbFrom = replyItemElement.getElementsByClass("WB_func").first().getElementsByClass("WB_from");
+                    System.out.println("评论时间:" + wbFrom.text());
+                    System.out.println("根节点评论:" + commentId);
+                    System.out.println("==============================================" );
+                    // 处理子评论
+                    rootChild = replyItemElement.getElementsByClass("list_box_in").first().getElementsByClass("list_ul").first();
+                    // 如果是子节点
+                    if("child_comment".equals(rootChild.attr("node-type"))){
+                        handlerChildComment(rootChild.getElementsByClass("list_li"),commentId);
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            });
+        }
+    }
+
+    private static void handlerChildComment(Elements listLi,String rootCid){
+        if(listLi != null){
+            listLi.forEach(replyItemElement -> {
+                //  System.out.println(replyItemElement);
                 System.out.println("评论mid:XXXXXX" );
                 // 获取评论ID
                 System.out.println("comment_id:" + replyItemElement.attr("comment_id"));
                 // 用户信息处理
-                Element wbFace = replyItemElement.getElementsByClass("WB_face").first();
+                Element wbFace = replyItemElement.getElementsByClass("list_con").first()
+                        .getElementsByClass("WB_text").first();
                 Element firstWbFace = wbFace.getElementsByTag("a").first();
-                String headUrl,uid,nickName;
+                String firstWbFaceStr = firstWbFace.toString();
+                String uid,nickName;
                 String uidReg = "usercard\\=\"id=(.*?)\"";
-                String headUrlReg = "src\\=\"(.*?)\"";
-                String nikeReg = "alt\\=\"(.*?)\"";
-                headUrl = pattern(headUrlReg,html);
-                uid = pattern(uidReg,html);
-                nickName = pattern(nikeReg,html);
-                System.out.println("评论人头像:" + headUrl);
+                uid = pattern(uidReg,firstWbFaceStr);
+                nickName = firstWbFace.text();
+                System.out.println("评论人头像:" + "");
                 System.out.println("评论人UID:" + uid);
                 System.out.println("评论人昵称:" + nickName);
                 // 用户信息处理 结束
                 // 获取评论内容
-                Elements wbText = replyItemElement.getElementsByClass("WB_text");
-                String weFaceStr = wbText.toString();
-                String textReg = nikeReg + ":(.*?)";
-                String text = pattern(textReg,weFaceStr);
+                String wbText = wbFace.text();;
+                String textReg = nickName + "：(.*)";
+                String text = pattern(textReg,wbText);
                 System.out.println("评论内容:" + text);
-
                 Elements wbFrom = replyItemElement.getElementsByClass("WB_func").first().getElementsByClass("WB_from");
                 System.out.println("评论时间:" + wbFrom.text());
-                System.out.println("根节点评论:" + replyItemElement.attr("comment_id"));
+                System.out.println("根节点评论:" + rootCid);
                 System.out.println("==============================================" );
             });
         }
@@ -194,5 +250,32 @@ public class ReadHtmlTest {
             return m.group(1);
         }
         return "";
+    }
+
+    /**
+     * 读出城市列表文件
+     */
+    public static String readCityFile() {
+        File file02 = new File("E:\\src\\my\\travel\\src\\main\\resources\\templates\\pages\\test.html");
+        FileInputStream is = null;
+        StringBuilder stringBuilder = null;
+        try {
+            if (file02.length() != 0) {
+                is = new FileInputStream(file02);
+                InputStreamReader streamReader = new InputStreamReader(is);
+                BufferedReader reader = new BufferedReader(streamReader);
+                String line;
+                stringBuilder = new StringBuilder();
+                while ((line = reader.readLine()) != null) {
+                    stringBuilder.append(line);
+                }
+                reader.close();
+                is.close();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return String.valueOf(stringBuilder);
+
     }
 }
