@@ -200,7 +200,13 @@ public class ReadHtmlTest {
                     rootChild = replyItemElement.getElementsByClass("list_box_in").first().getElementsByClass("list_ul").first();
                     // 如果是子节点
                     if("child_comment".equals(rootChild.attr("node-type"))){
-                        handlerChildComment(rootChild.getElementsByClass("list_li"),commentId);
+                        Elements list_li_v2 = rootChild.getElementsByClass("list_li_v2");
+                        // 没有更多的数据了，只需要查询当前的数据
+                        if(list_li_v2 == null){
+                            handlerChildComment(rootChild.getElementsByClass("list_li"),commentId);
+                        }else{
+                            // 需要重新掉接口查询所有的数据
+                        }
                     }
                 } catch (Exception e) {
                     e.printStackTrace();
