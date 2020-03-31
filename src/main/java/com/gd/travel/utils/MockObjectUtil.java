@@ -29,7 +29,8 @@ public class MockObjectUtil {
         Mock.set(clazz, mockTemplate);
         MockObject mockData = Mock.get(clazz);
         Object result = mockData.getOne();
-        for (Field declaredField : declaredFields) {
+
+        /*for (Field declaredField : declaredFields) {
             Class type = declaredField.getType();
             // List 数据处理
             if(List.class.equals(type)){
@@ -54,7 +55,7 @@ public class MockObjectUtil {
             }else if(Set.class.equals(declaredField.getType())){
                 // Set 数据处理
             }
-        }
+        }*/
         return result;
     }
 
