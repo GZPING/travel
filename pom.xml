@@ -123,6 +123,13 @@
             <artifactId>mock.java</artifactId>
             <version>1.6.0</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/org.easymock/easymock -->
+        <dependency>
+            <groupId>org.easymock</groupId>
+            <artifactId>easymock</artifactId>
+            <version>4.2</version>
+        </dependency>
+
     </dependencies>
 
     <build>
