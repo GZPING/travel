@@ -5,7 +5,7 @@ server:
     accesslog:
       enabled: true
   servlet:
-    context-path: /     #名字前面一定要加/ 不然启动会报错
+    context-path: /t/     #名字前面一定要加/ 不然启动会报错
 spring:
   #mysql
   datasource:

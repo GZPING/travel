@@ -2,61 +2,90 @@ package com.gd.travel.utils;
 
 import com.forte.util.Mock;
 import com.forte.util.mockbean.MockObject;
-import com.gd.travel.common.baseEntity.ResultVO;
 import com.gd.travel.entity.User;
-import org.springframework.data.domain.Sort.Order;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
-import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 /**
  * @author : GD
  * @date :2020/3/31 : 11:10
  */
 public class MockObjectUtil {
+
+    /**
+     * list 的大小
+     */
+    private final static Integer LIST_SIZE = 20;
+
+    /**
+     * 对象中list 的list 大小
+     */
+    private final static Integer CHILD_LIST_SIZE = 5;
     
-    public static Object mockObject(Class clazz) throws Exception {
+    public static <T> T mockObject(Class<T> clazz) throws IllegalAccessException, InstantiationException {
+        // 断指定类是否是List的子类或者父类
+        if(List.class.isAssignableFrom(clazz) || clazz.newInstance() instanceof List
+            || Set.class.isAssignableFrom(clazz) || clazz.newInstance() instanceof Set){
+            return null;
+        }
         Field[] declaredFields = clazz.getDeclaredFields();
         Map<String, Object> mockTemplate = getMockTemplate(declaredFields);
-        Mock.set(clazz, mockTemplate);
-        MockObject mockData = Mock.get(clazz);
-        Object result = mockData.getOne();
-
-        /*for (Field declaredField : declaredFields) {
+        Mock.reset(clazz, mockTemplate);
+        MockObject<T> mockData = Mock.get(clazz);
+        T result = mockData.getOne();
+        // 对list 进行处理
+        for (Field declaredField : declaredFields) {
             Class type = declaredField.getType();
             // List 数据处理
-            if(List.class.equals(type)){
-                // 当前集合的泛型类型
+            if(List.class.equals(type) || Set.class.equals(type)){
                 Type genericType = declaredField.getGenericType();
-                if (null == genericType) {
-                    continue;
-                }
-                if (genericType instanceof ParameterizedType) {
-                    ParameterizedType pt = (ParameterizedType) genericType;
-                    // 得到泛型里的class类型对象
-                    Class<?> actualTypeArgument = (Class<?>)pt.getActualTypeArguments()[0];
-                    Field[] listFields = actualTypeArgument.getDeclaredFields();
-                    Map<String, Object> listTemplate = getMockTemplate(listFields);
-                    Mock.set(actualTypeArgument, mockTemplate);
-                    // 获取一个MockObject
-                    MockObject mockUser = Mock.get(actualTypeArgument);
-                    // 通过并行流(即多线程)的方式获取20个user对象
-                    List listParallel = mockUser.getListParallel(20);
-                    declaredField.set(result, listParallel);
-                }
-            }else if(Set.class.equals(declaredField.getType())){
-                // Set 数据处理
+                List childList= getListByGenericType(genericType);
+                declaredField.setAccessible(true);
+                declaredField.set(result,childList);
             }
-        }*/
+        }
         return result;
+    }
+
+    /**
+     * 构造list 数据
+     * @param clazz 获取对应List 的 class 的类型
+     * @return
+     * @throws IllegalAccessException
+     * @throws InstantiationException
+     */
+    public static List mockList(Class clazz) throws InstantiationException, IllegalAccessException {
+        List result = new ArrayList(LIST_SIZE);
+        for (int i = 0; i < LIST_SIZE; i++) {
+            result.add(mockObject(clazz));
+        }
+        return result ;
+    }
+
+    /**
+     * 处理集合
+     * @param genericType 当前集合的泛型类型
+     * @return
+     */
+    private static List getListByGenericType(Type genericType){
+        if (null == genericType) {
+            return null;
+        }
+        if (genericType instanceof ParameterizedType) {
+            ParameterizedType pt = (ParameterizedType) genericType;
+            // 得到泛型里的class类型对象
+            Class<?> actualTypeArgument = (Class<?>)pt.getActualTypeArguments()[0];
+            Field[] listFields = actualTypeArgument.getDeclaredFields();
+            Map<String, Object> listTemplate = getMockTemplate(listFields);
+            Mock.reset(actualTypeArgument, listTemplate);
+            MockObject mockUser = Mock.get(actualTypeArgument);
+            List listParallel = mockUser.getListParallel(CHILD_LIST_SIZE);
+            return listParallel;
+        }
+        return null;
     }
 
 
@@ -69,6 +98,11 @@ public class MockObjectUtil {
         // 准备模板载体
         Map<String, Object> template = new HashMap<>();
         for (Field declaredField : declaredFields) {
+            Class type = declaredField.getType();
+            // 过滤数组
+            if(List.class.equals(type) || Set.class.equals(type)){
+                continue;
+            }
             String fieldName = declaredField.getName();
             template.put(fieldName,convert2MockWork(fieldName,declaredField.getType()));
         }
@@ -118,11 +152,14 @@ public class MockObjectUtil {
     }
 
 
+    /**
+     * @param args
+     * @throws Exception
+     */
     public static void main(String[] args) throws Exception {
-        List<User> users = new ArrayList<>();
-        //Object o = MockObjectUtil.mockObject(users.getClass());
-        Object o1 = MockObjectUtil.mockObject(User.class);
-       // System.out.println(o);
-        System.out.println(o1);
+        List<User> users = mockList(User.class);
+        System.out.println(users);
+//        User o = mockObject(User.class);
+//        System.out.println(o);
     }
 }

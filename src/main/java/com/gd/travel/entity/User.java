@@ -17,7 +17,7 @@ public class User {
     private String email;
     private String password;
 
-    List<User> users ;
+    List<User> users;
 
-    Set<User> userSet;
+    List<User> userSet;
 }
