@@ -2,12 +2,14 @@ package com.gd.travel.utils;
 
 import com.forte.util.Mock;
 import com.forte.util.mockbean.MockObject;
+import com.gd.travel.entity.CompaniesDTO;
 import com.gd.travel.entity.User;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * @author : GD
@@ -18,12 +20,14 @@ public class MockObjectUtil {
     /**
      * list 的大小
      */
-    private final static Integer LIST_SIZE = 20;
+    private final static Integer LIST_SIZE = 10;
 
     /**
      * 对象中list 的list 大小
      */
-    private final static Integer CHILD_LIST_SIZE = 5;
+    private final static Integer CHILD_LIST_SIZE = 2;
+
+    private final static ConcurrentHashMap<Class, HashMap<String,Object>> roles = new ConcurrentHashMap<>();
     
     public static <T> T mockObject(Class<T> clazz) throws IllegalAccessException, InstantiationException {
         // 断指定类是否是List的子类或者父类
@@ -31,8 +35,11 @@ public class MockObjectUtil {
             || Set.class.isAssignableFrom(clazz) || clazz.newInstance() instanceof Set){
             return null;
         }
+        Map<String, Object> mockTemplate;
         Field[] declaredFields = clazz.getDeclaredFields();
-        Map<String, Object> mockTemplate = getMockTemplate(declaredFields);
+        if((mockTemplate = roles.get(clazz)) == null){
+            mockTemplate = getMockTemplate(declaredFields);
+        }
         Mock.reset(clazz, mockTemplate);
         MockObject<T> mockData = Mock.get(clazz);
         T result = mockData.getOne();
@@ -79,7 +86,10 @@ public class MockObjectUtil {
             // 得到泛型里的class类型对象
             Class<?> actualTypeArgument = (Class<?>)pt.getActualTypeArguments()[0];
             Field[] listFields = actualTypeArgument.getDeclaredFields();
-            Map<String, Object> listTemplate = getMockTemplate(listFields);
+            Map<String, Object> listTemplate;
+            if((listTemplate = roles.get(actualTypeArgument)) == null){
+                listTemplate = getMockTemplate(listFields);
+            }
             Mock.reset(actualTypeArgument, listTemplate);
             MockObject mockUser = Mock.get(actualTypeArgument);
             List listParallel = mockUser.getListParallel(CHILD_LIST_SIZE);
@@ -104,7 +114,11 @@ public class MockObjectUtil {
                 continue;
             }
             String fieldName = declaredField.getName();
-            template.put(fieldName,convert2MockWork(fieldName,declaredField.getType()));
+            String role = convert2MockWork(fieldName, declaredField.getType());
+            // 只有匹配上规则的才会添加规则
+            if(role != null){
+                template.put(fieldName,role);
+            }
         }
         return template;
     }
@@ -123,32 +137,33 @@ public class MockObjectUtil {
             return "";
         }else if(type.equals(Double.class)){
             return "@doubles(0,1000000,0,100)";
-        }else if(type.equals(Integer.class)){
+        }else if(type.equals(Integer.class) || type.equals(Long.class)){
             return "@doubles(0,10000000)";
         }else if(type.equals(Date.class)){
             return "@date";
-        }
-        /**
-         * String 类型处理
-         */
-        // 名字处理
-        if(fieldName.toLowerCase().contains("name")){
-            return "@cname";
-            //句子处理
-        }else if(fieldName.toLowerCase().contains("email")){
-            return "@email";
-        }else if(fieldName.toLowerCase().contains("password")){
+        }else if(type.equals(String.class)){
+            /**
+             * String 类型处理
+             */
+            // 名字处理
+            if(fieldName.toLowerCase().contains("name")){
+                return "@cname";
+                //句子处理
+            }else if(fieldName.toLowerCase().contains("email")){
+                return "@email";
+            }else if(fieldName.toLowerCase().contains("password")){
+                return "@word(6,16)";
+            }else if(fieldName.toLowerCase().contains("url")||fieldName.toLowerCase().contains("link")){
+                return "url";
+            }else if(fieldName.toLowerCase().contains("date")){
+                return "toDateStr";
+            }else if(fieldName.toLowerCase().contains("time")){
+                return "toDateTime";
+            }
+            // 默认显示一段6,16 字的话
             return "@word(6,16)";
-        }else if(fieldName.toLowerCase().contains("url")){
-            return "url";
-        }else if(fieldName.toLowerCase().contains("date")){
-            return "toDateStr";
-        }else if(fieldName.toLowerCase().contains("time")){
-            return "toDateTime";
         }
-        // 默认显示一段6,16 字的话
-        return "@paragraph(6,16)";
-
+        return null;
     }
 
 
@@ -157,7 +172,7 @@ public class MockObjectUtil {
      * @throws Exception
      */
     public static void main(String[] args) throws Exception {
-        List<User> users = mockList(User.class);
+        List<CompaniesDTO> users = mockList(CompaniesDTO.class);
         System.out.println(users);
 //        User o = mockObject(User.class);
 //        System.out.println(o);

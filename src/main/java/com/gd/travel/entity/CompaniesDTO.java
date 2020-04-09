@@ -25,8 +25,6 @@ import java.util.List;
 @ApiModel(value="Companies对象", description="")
 public class CompaniesDTO extends BaseEntity {
 
-    private static final long serialVersionUID=1L;
-
     @TableId(type = IdType.AUTO)
     private Long id;
 

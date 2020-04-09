@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.*;
 
 import com.gd.travel.controller.BaseController;
 
+import java.util.List;
+
 /**
  * <p>
  *  前端控制器
@@ -48,11 +50,18 @@ public class CompaniesController extends BaseController {
     @PostMapping("removeCompanies")
     @ResponseBody
     @ApiOperation(value = "删除公司",notes = "删除列表")
-    public ResultVO addCompanies(Long id, @RequestParam("token") String token){
+    public ResultVO removeCompanies(Long id, @RequestParam("token") String token){
         if(StringUtils.isBlank(token) || !"petter123".equals(token)){
             return ResultVO.getParamsError("token 错误");
         }
         return ResultVO.getSuccess(companiesService.removeById(id));
+    }
+
+    @PostMapping("getList")
+    @ResponseBody
+    @ApiOperation(value = "删除公司",notes = "删除列表")
+    public ResultVO<List<CompaniesDTO>> getList(Long id, @RequestParam("token") String token){
+        return ResultVO.getSuccess();
     }
 }
 
