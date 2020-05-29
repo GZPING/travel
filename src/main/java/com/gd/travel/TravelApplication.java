@@ -18,6 +18,7 @@ public class TravelApplication {
         ConfigurableApplicationContext run = SpringApplication.run(TravelApplication.class, args);
         Object user = run.getBean("getUser");
         System.out.println(user);
+
   /*      ApplicationContext context = new ClassPathXmlApplicationContext("classpath:applicationfile.xml");
         System.out.println(context.getBean("user"));*/
     }
